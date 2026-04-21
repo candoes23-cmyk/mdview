@@ -56,19 +56,19 @@ Welcome to the mission briefing. This document outlines the fundamental physics,
 
 ## Essential Physics (LaTeX Math)
 
-Inline math: To calculate the gravitational force between two bodies, we use Newton's law of universal gravitation: $F = G \\\\frac{m_1 m_2}{r^2}$.
+Inline math: To calculate the gravitational force between two bodies, we use Newton's law of universal gravitation: $F = G \\frac{m_1 m_2}{r^2}$.
 
 The **vis-viva equation** is crucial for determining the velocity $v$ of a body in an elliptical orbit:
 
-$$v^2 = GM \\\\left( \\\\frac{2}{r} - \\\\frac{1}{a} \\\\right)$$
+$$v^2 = GM \\left( \\frac{2}{r} - \\frac{1}{a} \\right)$$
 
 To calculate the change in velocity required for orbital maneuvers, we rely on the **Tsiolkovsky rocket equation**:
 
-$$\\\\Delta v = v_e \\\\ln \\\\frac{m_0}{m_f}$$
+$$\\Delta v = v_e \\ln \\frac{m_0}{m_f}$$
 
 We track spacecraft orientation using state vectors in 3D space:
 
-$$\\\\mathbf{S} = \\\\begin{pmatrix} x \\\\\\\\ y \\\\\\\\ z \\\\\\\\ v_x \\\\\\\\ v_y \\\\\\\\ v_z \\\\end{pmatrix}$$
+$$\\mathbf{S} = \\begin{pmatrix} x \\\\ y \\\\ z \\\\ v_x \\\\ v_y \\\\ v_z \\end{pmatrix}$$
 
 ## Telemetry Systems (Syntax Highlighting)
 
@@ -101,9 +101,9 @@ console.log(\`Required Delta-v: \${calculateDeltaV(4500, 50000, 15000).toFixed(2
 
 | Body | Mass (kg) | Radius (km) | Surface Gravity |
 |---------|--------|-------|-------|
-| Earth | $5.97 \\\\times 10^{24}$ | 6,371 | $9.81 \\text{ m/s}^2$ |
-| Moon | $7.34 \\\\times 10^{22}$ | 1,737 | $1.62 \\text{ m/s}^2$ |
-| Mars | $6.42 \\\\times 10^{23}$ | 3,389 | $3.72 \\text{ m/s}^2$ |
+| Earth | $5.97 \\times 10^{24}$ | 6,371 | $9.81 \\text{ m/s}^2$ |
+| Moon | $7.34 \\times 10^{22}$ | 1,737 | $1.62 \\text{ m/s}^2$ |
+| Mars | $6.42 \\times 10^{23}$ | 3,389 | $3.72 \\text{ m/s}^2$ |
 
 ## Mission Flight Plan (Mermaid Diagrams)
 
@@ -169,4 +169,4 @@ Ensure all sensors are **online**, *calibrated*, and ~~deprecated systems~~ are 
 
 *Mission Control Dashboard v2.4.1 — Ad Astra*
 `,y=a=>document.querySelector(a),$=y("#editor"),ee=y("#preview"),pn=y("#preview-scroll"),Ye=y("#main"),ie=y("#toc-dropdown"),un=y("#toc-list"),te=y("#file-input"),hn=y("#file-name"),dn=y("#toast"),A=y("#editor-panel"),ue=y("#resize-handle"),fn=y("#btn-open"),gn=y("#btn-theme"),re=y("#btn-toc"),mn=y("#btn-copy"),kn=y("#btn-print"),he=y("#btn-view-editor"),de=y("#btn-view-split"),fe=y("#btn-view-preview"),Me=y("#icon-moon"),Pe=y("#icon-sun");let j=!1,De;ut(dn);function $e(){an($.value,ee),on(ee,un,pn),bn($.value)}function Je(){clearTimeout(De),De=setTimeout($e,120)}function bn(a){const e=a.trim(),t=e?e.split(/\s+/).length:0,n=e.length;y("#stat-words").textContent=`${t} word${t!==1?"s":""}`,y("#stat-chars").textContent=`${n} char${n!==1?"s":""}`}function et(a){document.documentElement.setAttribute("data-theme",a),localStorage.setItem("md-viewer-theme",a),a==="dark"?(Me.style.display="",Pe.style.display="none"):(Me.style.display="none",Pe.style.display="")}function xn(){const a=document.documentElement.getAttribute("data-theme");et(a==="dark"?"light":"dark")}function D(a){Ye.className=`main view-${a}`,[he,de,fe].forEach(e=>e.classList.remove("active")),a==="editor"&&he.classList.add("active"),a==="split"&&de.classList.add("active"),a==="preview"&&fe.classList.add("active")}function tt(){j=!j,ie.classList.toggle("hidden",!j),re.classList.toggle("active",j)}function nt(){j&&(j=!1,ie.classList.add("hidden"),re.classList.remove("active"))}document.addEventListener("mousedown",a=>{j&&!ie.contains(a.target)&&!re.contains(a.target)&&nt()});ie.addEventListener("click",a=>{a.target.closest(".toc-item")&&nt()});function Te(a){const e=new FileReader;e.onload=t=>{$.value=t.target.result,hn.textContent=a.name,$e(),ge(`Loaded ${a.name}`)},e.readAsText(a)}let H=0;A.addEventListener("dragenter",a=>{a.preventDefault(),H++,A.classList.add("dragover")});A.addEventListener("dragleave",a=>{a.preventDefault(),H--,H<=0&&(H=0,A.classList.remove("dragover"))});A.addEventListener("dragover",a=>a.preventDefault());A.addEventListener("drop",a=>{a.preventDefault(),H=0,A.classList.remove("dragover");const e=a.dataTransfer?.files[0];e&&Te(e)});document.addEventListener("dragover",a=>a.preventDefault());document.addEventListener("drop",a=>{a.preventDefault();const e=a.dataTransfer?.files?.[0];e&&Te(e)});let ne=!1;ue.addEventListener("mousedown",a=>{ne=!0,ue.classList.add("active"),document.body.style.cursor="col-resize",document.body.style.userSelect="none",a.preventDefault()});document.addEventListener("mousemove",a=>{if(!ne)return;const e=Ye.getBoundingClientRect(),n=(a.clientX-e.left)/e.width*100;n>15&&n<85&&(A.style.flex=`0 0 ${n}%`,y("#preview-panel").style.flex="1")});document.addEventListener("mouseup",()=>{ne&&(ne=!1,ue.classList.remove("active"),document.body.style.cursor="",document.body.style.userSelect="")});$.addEventListener("input",Je);fn.addEventListener("click",()=>te.click());te.addEventListener("change",()=>{const a=te.files?.[0];a&&Te(a)});gn.addEventListener("click",xn);re.addEventListener("click",tt);he.addEventListener("click",()=>D("editor"));de.addEventListener("click",()=>D("split"));fe.addEventListener("click",()=>D("preview"));mn.addEventListener("click",()=>{navigator.clipboard.writeText(ee.innerHTML).then(()=>ge("HTML copied to clipboard"))});kn.addEventListener("click",()=>window.print());document.addEventListener("keydown",a=>{const e=a.metaKey||a.ctrlKey;e&&a.key==="o"&&(a.preventDefault(),te.click()),e&&a.key==="b"&&(a.preventDefault(),tt()),e&&a.key==="p"&&(a.preventDefault(),window.print()),e&&a.shiftKey&&a.key==="C"&&(a.preventDefault(),navigator.clipboard.writeText(ee.innerHTML).then(()=>ge("HTML copied"))),e&&a.key==="1"&&(a.preventDefault(),D("editor")),e&&a.key==="2"&&(a.preventDefault(),D("split")),e&&a.key==="3"&&(a.preventDefault(),D("preview"))});$.addEventListener("keydown",a=>{if(a.key==="Tab"){a.preventDefault();const e=$.selectionStart,t=$.selectionEnd;$.value=$.value.substring(0,e)+"  "+$.value.substring(t),$.selectionStart=$.selectionEnd=e+2,Je()}});(function(){const e=localStorage.getItem("md-viewer-theme")||"dark";et(e),$.value=cn,$e()})();
-//# sourceMappingURL=index-BhLi_5oJ.js.map
+//# sourceMappingURL=index-Cio_AdDv.js.map
