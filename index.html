@@ -36,7 +36,7 @@
     content="Free online Markdown viewer with live preview, LaTeX math, Mermaid diagrams, and syntax highlighting." />
   <meta name="twitter:image" content="https://mdview.co/og-image.png" />
 
-  <!-- Favicon — replace with your own files -->
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke-linecap='round' stroke-linejoin='round'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%2358a6ff'/><stop offset='100%25' stop-color='%23bc8cff'/></linearGradient></defs><rect x='2' y='2' width='20' height='20' rx='3' stroke='url(%23g)' stroke-width='1.5'/><path d='M6 15V7l3 4 3-4v8' stroke='url(%23g)' stroke-width='2'/><path d='M16 7v8' stroke='url(%23g)' stroke-width='2'/><path d='M16 15l2-2.5' stroke='url(%23g)' stroke-width='2'/></svg>" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -84,14 +84,14 @@
   }
   </script>
 
-  <!-- Google AdSense — replace ca-pub-4559441289155736 with your publisher ID -->
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4559441289155736"
     crossorigin="anonymous"></script>
   <script type="module" crossorigin src="/assets/mermaid-CG0dut8w.js"></script>
   <script type="module" crossorigin src="/assets/katex-DHMw6HUq.js"></script>
   <script type="module" crossorigin src="/assets/prism-Bq9ueNJX.js"></script>
-  <script type="module" crossorigin src="/assets/main-Dyx3X36q.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-cEi4CEjG.css">
+  <script type="module" crossorigin src="/assets/main-BnAsHUbU.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-SJD24Z6r.css">
 </head>
 
 <body>
@@ -242,7 +242,6 @@
 
       <!-- Ad Sidebar -->
       <aside class="ad-sidebar" id="ad-sidebar">
-        <!-- Replace ca-pub-4559441289155736 and data-ad-slot with your AdSense IDs -->
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4559441289155736"
           data-ad-slot="2101119579" data-ad-format="vertical" data-full-width-responsive="false"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -258,14 +257,12 @@
 
   </div><!-- /app -->
 
-  <!-- ===== Ad Footer (outside #app to preserve app scroll layout) ===== -->
+  <!-- ===== Ad Footer ===== -->
   <footer class="ad-footer" id="ad-footer">
-    <!-- Replace ca-pub-4559441289155736 and data-ad-slot with your AdSense IDs -->
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4559441289155736" data-ad-slot="5724656502"
       data-ad-format="horizontal" data-full-width-responsive="true"></ins>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
-      // Collapse footer if no ad fills after 3s (ad blocker, placeholder IDs, no fill)
       setTimeout(function () {
         var footer = document.getElementById('ad-footer');
         var ins = footer && footer.querySelector('.adsbygoogle');
@@ -275,6 +272,13 @@
       }, 3000);
     </script>
   </footer>
+
+  <!-- ===== Site Nav Footer ===== -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <a href="/about/">About</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </nav>
 
   <div class="toast" id="toast"></div>
   <input type="file" id="file-input" accept=".md,.markdown,.mdown,.mkdn,.mkd,.mdwn,.mdtxt,.mdtext,.txt" />

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About | MD Viewer</title>
+  <meta name="description" content="About MD Viewer — a free online Markdown viewer and editor with live preview, LaTeX math, Mermaid diagrams, and syntax highlighting." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="canonical" href="https://mdview.co/about/" />
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke-linecap='round' stroke-linejoin='round'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%2358a6ff'/><stop offset='100%25' stop-color='%23bc8cff'/></linearGradient></defs><rect x='2' y='2' width='20' height='20' rx='3' stroke='url(%23g)' stroke-width='1.5'/><path d='M6 15V7l3 4 3-4v8' stroke='url(%23g)' stroke-width='2'/><path d='M16 7v8' stroke='url(%23g)' stroke-width='2'/><path d='M16 15l2-2.5' stroke='url(%23g)' stroke-width='2'/></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-surface: #161b22;
+      --text: #e6edf3;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff;
+      --border: rgba(136, 198, 255, 0.08);
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --bg-surface: #f6f8fa;
+      --text: #1f2328;
+      --text-secondary: #656d76;
+      --accent: #0969da;
+      --border: rgba(31, 35, 40, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-surface);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .page-header a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .page-header a:hover { text-decoration: underline; }
+
+    .page-header .sep {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+    }
+
+    .page-header .title {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+
+    p, li {
+      font-size: 15px;
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+
+    ul { padding-left: 24px; }
+    li { margin-bottom: 8px; }
+
+    a { color: var(--accent); }
+
+    strong { color: var(--text); }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .feature {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-surface);
+    }
+
+    .feature h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .feature p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .site-footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    .site-footer a:hover { color: var(--accent); }
+  </style>
+</head>
+
+<body>
+  <header class="page-header">
+    <a href="/">MD Viewer</a>
+    <div class="sep"></div>
+    <span class="title">About</span>
+  </header>
+
+  <main>
+    <h1>About MD Viewer</h1>
+
+    <p><strong>MD Viewer</strong> is a free, open-in-browser Markdown editor and previewer built for developers, writers, students, and anyone who works with Markdown. No sign-up, no installation, no server-side processing — just open <a href="/">mdview.co</a> and start writing.</p>
+
+    <p>We built MD Viewer because existing Markdown tools either require an account, lack advanced features like math and diagrams, or bury essential functionality behind paywalls. MD Viewer gives you everything in one place, free and private.</p>
+
+    <h2>Features</h2>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Live Preview</h3>
+        <p>See your Markdown rendered in real-time with a split-pane editor. Resize the panels to fit your workflow.</p>
+      </div>
+      <div class="feature">
+        <h3>LaTeX Math</h3>
+        <p>Write mathematical equations using LaTeX syntax. Powered by KaTeX for fast, publication-quality rendering.</p>
+      </div>
+      <div class="feature">
+        <h3>Mermaid Diagrams</h3>
+        <p>Create flowcharts, sequence diagrams, class diagrams, Gantt charts, ER diagrams, and more with Mermaid syntax.</p>
+      </div>
+      <div class="feature">
+        <h3>Syntax Highlighting</h3>
+        <p>Code blocks are highlighted for 200+ programming languages via Prism.js with automatic language detection.</p>
+      </div>
+      <div class="feature">
+        <h3>Dark &amp; Light Themes</h3>
+        <p>Switch between dark and light mode with one click. Your preference is saved automatically.</p>
+      </div>
+      <div class="feature">
+        <h3>Privacy First</h3>
+        <p>Your content never leaves your browser. Everything is processed client-side — we can't see what you write.</p>
+      </div>
+      <div class="feature">
+        <h3>Export Options</h3>
+        <p>Copy rendered HTML to your clipboard or print/export to PDF directly from the browser.</p>
+      </div>
+      <div class="feature">
+        <h3>Drag &amp; Drop</h3>
+        <p>Open any .md file by dragging it onto the editor. Supports all common Markdown file extensions.</p>
+      </div>
+    </div>
+
+    <h2>Who Is MD Viewer For?</h2>
+    <ul>
+      <li><strong>Developers</strong> — Preview README files, documentation, and technical specs</li>
+      <li><strong>Students &amp; academics</strong> — Write papers and notes with LaTeX math support</li>
+      <li><strong>Technical writers</strong> — Draft documentation with live formatting preview</li>
+      <li><strong>Bloggers</strong> — Write posts in Markdown and copy the HTML for your CMS</li>
+      <li><strong>Anyone</strong> — who needs a quick, free Markdown previewer with no friction</li>
+    </ul>
+
+    <h2>Technology</h2>
+    <p>MD Viewer is built with modern web technologies: TypeScript, Vite, Marked, KaTeX, Mermaid, Prism.js, and DOMPurify. The entire application runs client-side with zero backend dependencies.</p>
+
+    <h2>Contact</h2>
+    <p>Have questions, feedback, or suggestions? Reach out at <strong>hello@mdview.co</strong>.</p>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </footer>
+</body>
+
+</html>
