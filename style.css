@@ -751,6 +751,11 @@ body {
   position: relative;
 }
 
+.markdown-body pre[class*="language-"] {
+  padding: 0;
+  margin: 1em 0;
+}
+
 .markdown-body pre code {
   display: block;
   padding: 20px 24px;
