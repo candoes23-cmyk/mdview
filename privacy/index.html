@@ -140,20 +140,30 @@
 
   <main>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: April 21, 2026</p>
+    <p class="updated">Last updated: April 23, 2026</p>
 
     <p>MD Viewer ("we", "us", or "the site") is a free, browser-based Markdown viewer and editor available at <strong>mdview.co</strong>. We are committed to protecting your privacy. This policy explains what data we collect and how it is used.</p>
 
     <h2>1. Data We Collect</h2>
-    <p><strong>We do not collect personal information.</strong> MD Viewer does not require an account, login, or registration of any kind. We do not ask for your name, email address, or any other personally identifiable information.</p>
+    <p><strong>We do not collect personal information.</strong> MD Viewer does not require an account, login, or registration of any kind. We do not ask for your name, email address, or any other personally identifiable information. If you use the share feature, your IP address is used transiently for rate limiting (not stored beyond a 60-second window).</p>
 
     <h2>2. Content You Create</h2>
-    <p>All Markdown content you type or paste into the editor is processed <strong>entirely in your browser</strong>. Your content is never transmitted to our servers. We cannot see, access, or store anything you write.</p>
+    <p>All Markdown content you type or paste into the editor is processed <strong>entirely in your browser</strong> by default. We cannot see, access, or store anything you write in the editor.</p>
 
-    <h2>3. Local Storage</h2>
+    <h2>3. Document Sharing</h2>
+    <p>If you choose to use the <strong>Share</strong> feature, your document's Markdown content is transmitted to and stored on <strong>Cloudflare Workers</strong> infrastructure using Cloudflare KV. Specifically:</p>
+    <ul>
+      <li>The Markdown content you share is stored with a randomly generated ID for <strong>up to 90 days</strong>, after which it is automatically deleted.</li>
+      <li>Shared documents are <strong>publicly accessible</strong> to anyone who has the unique link (e.g., <code>mdview.co/s/xxxxxxxx</code>).</li>
+      <li>Shared documents are limited to <strong>500 KB</strong> per document.</li>
+      <li>No personal information is attached to shared documents — they are anonymous.</li>
+      <li>We cannot un-share or edit a document once it has been shared. Documents expire automatically after 90 days.</li>
+    </ul>
+
+    <h2>4. Local Storage</h2>
     <p>We use your browser's <strong>localStorage</strong> to save your theme preference (dark or light mode). This data stays on your device and is never sent to any server. You can clear it at any time through your browser settings.</p>
 
-    <h2>4. Cookies &amp; Advertising</h2>
+    <h2>5. Cookies &amp; Advertising</h2>
     <p>MD Viewer uses <strong>Google AdSense</strong> to display advertisements. Google may use cookies and similar technologies to serve ads based on your prior visits to this and other websites. Specifically:</p>
     <ul>
       <li>Google's use of advertising cookies enables it and its partners to serve ads based on your browsing activity.</li>
@@ -162,25 +172,26 @@
     </ul>
     <p>We do not set any first-party tracking cookies ourselves.</p>
 
-    <h2>5. Analytics</h2>
+    <h2>6. Analytics</h2>
     <p>We may use privacy-respecting analytics to understand aggregate traffic patterns (e.g., page views, popular features). If analytics are enabled, no personally identifiable information is collected.</p>
 
-    <h2>6. Third-Party Services</h2>
+    <h2>7. Third-Party Services</h2>
     <p>MD Viewer loads the following external resources to provide its features:</p>
     <ul>
       <li><strong>Google Fonts</strong> — to render typography (Inter, JetBrains Mono)</li>
       <li><strong>jsDelivr CDN</strong> — to load syntax highlighting language definitions</li>
       <li><strong>Google AdSense</strong> — to serve advertisements</li>
+      <li><strong>Cloudflare Workers &amp; KV</strong> — to power the document sharing feature (content storage and retrieval)</li>
     </ul>
     <p>Each of these services has its own privacy policy governing how they handle requests from your browser.</p>
 
-    <h2>7. Children's Privacy</h2>
+    <h2>8. Children's Privacy</h2>
     <p>MD Viewer is a general-purpose tool and is not directed at children under the age of 13. We do not knowingly collect any personal information from children.</p>
 
-    <h2>8. Changes to This Policy</h2>
+    <h2>9. Changes to This Policy</h2>
     <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
 
-    <h2>9. Contact</h2>
+    <h2>10. Contact</h2>
     <p>If you have any questions about this Privacy Policy, please contact us at <strong>hello@mdview.co</strong>.</p>
   </main>
 
