@@ -81,6 +81,48 @@
   }
   </script>
 
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I write LaTeX math equations in this editor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use single dollar signs $...$ for inline math (e.g., $E = mc^2$) and double dollar signs $$...$$ for display equations on their own line. The editor renders them instantly using KaTeX."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What LaTeX math commands are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This editor supports most standard LaTeX math commands via KaTeX, including fractions (\\frac), integrals (\\int), summations (\\sum), matrices, Greek letters, subscripts, superscripts, square roots, limits, and many more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this LaTeX editor free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, completely free with no sign-up or installation required. It runs entirely in your browser using the KaTeX rendering engine."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I combine LaTeX math with regular Markdown text?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. This editor fully supports mixing LaTeX math with standard Markdown features like headings, bold/italic text, code blocks, tables, lists, and even Mermaid diagrams — all in the same document."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4559441289155736"
     crossorigin="anonymous"></script>

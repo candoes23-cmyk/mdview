@@ -81,6 +81,48 @@
   }
   </script>
 
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I create a Markdown table?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use pipes | to separate columns and hyphens --- for the header separator row. For example: | Name | Age | followed by | --- | --- | on the next line, then your data rows. The editor shows a live preview as you type."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I align columns in a Markdown table?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Add colons to the separator row to set alignment. Use :--- for left-aligned, :---: for centered, and ---: for right-aligned columns. For example: | :--- | :---: | ---: | aligns the three columns left, center, and right respectively."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this Markdown table generator free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, this tool is completely free with no sign-up or installation required. It runs entirely in your browser."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I format text inside Markdown table cells?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can use bold (**text**), italic (*text*), inline code (`code`), and links ([text](url)) inside table cells. The live preview shows your formatting applied in real-time."
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4559441289155736"
     crossorigin="anonymous"></script>
