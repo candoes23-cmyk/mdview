@@ -1,51 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mdview.co/</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/" />
   </url>
   <url>
     <loc>https://mdview.co/markdown-to-html/</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/markdown-to-html/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/markdown-to-html/" />
   </url>
   <url>
     <loc>https://mdview.co/latex-editor/</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/latex-editor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/latex-editor/" />
   </url>
   <url>
     <loc>https://mdview.co/mermaid-editor/</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/mermaid-editor/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/mermaid-editor/" />
   </url>
   <url>
     <loc>https://mdview.co/markdown-table-generator/</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/markdown-table-generator/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/markdown-table-generator/" />
   </url>
   <url>
     <loc>https://mdview.co/about/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/about/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/about/" />
   </url>
   <url>
     <loc>https://mdview.co/privacy/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/privacy/" />
   </url>
   <url>
     <loc>https://mdview.co/terms/</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/terms/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/terms/" />
   </url>
 </urlset>
