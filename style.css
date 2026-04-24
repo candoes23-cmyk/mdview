@@ -1025,6 +1025,7 @@ body {
 .ad-footer {
   flex-shrink: 0;
   min-height: 90px;
+  max-height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1037,6 +1038,7 @@ body {
 .ad-footer .adsbygoogle {
   width: 100%;
   max-height: 90px;
+  overflow: hidden;
 }
 
 .ad-footer:empty,
@@ -1410,6 +1412,10 @@ body {
   }
 
   .ad-sidebar {
+    display: none;
+  }
+
+  .ad-footer {
     display: none;
   }
 
