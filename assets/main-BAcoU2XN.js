@@ -1,128 +1,134 @@
-import{t as f,r as Y,i as U}from"./renderer-gqDPTQR-.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const o of i)if(o.type==="childList")for(const l of o.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&n(l)}).observe(document,{childList:!0,subtree:!0});function r(i){const o={};return i.integrity&&(o.integrity=i.integrity),i.referrerPolicy&&(o.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?o.credentials="include":i.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function n(i){if(i.ep)return;i.ep=!0;const o=r(i);fetch(i.href,o)}})();let g=null;function V(e,t,r){const n=e.querySelectorAll("h1, h2, h3, h4, h5, h6");if(t.innerHTML="",n.length===0){t.innerHTML='<div style="padding:16px;color:var(--text-muted);font-size:var(--fs-xs);">No headings found</div>';return}n.forEach(i=>{const o=parseInt(i.tagName[1]),l=document.createElement("a");l.className="toc-item",l.dataset.level=String(o),l.textContent=(i.textContent||"").replace(/#$/,"").trim(),l.href=`#${i.id}`,l.addEventListener("click",H=>{H.preventDefault(),i.scrollIntoView({behavior:"smooth",block:"start"}),t.querySelectorAll(".toc-item").forEach(G=>G.classList.remove("active")),l.classList.add("active"),history.replaceState(null,"",`#${i.id}`)}),t.appendChild(l)}),K(n,t,r)}function K(e,t,r){g&&g.disconnect(),g=new IntersectionObserver(n=>{n.forEach(i=>{if(i.isIntersecting){const o=i.target.id;t.querySelectorAll(".toc-item").forEach(l=>{l.classList.toggle("active",l.getAttribute("href")===`#${o}`)})}})},{root:r,rootMargin:"-20% 0px -60% 0px",threshold:0}),e.forEach(n=>g.observe(n))}const A=`# Mission Control: Orbital Mechanics 101 🚀
+import{t as p,r as G,i as U}from"./renderer-gqDPTQR-.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))n(r);new MutationObserver(r=>{for(const i of r)if(i.type==="childList")for(const l of i.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&n(l)}).observe(document,{childList:!0,subtree:!0});function o(r){const i={};return r.integrity&&(i.integrity=r.integrity),r.referrerPolicy&&(i.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?i.credentials="include":r.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function n(r){if(r.ep)return;r.ep=!0;const i=o(r);fetch(r.href,i)}})();let g=null;function W(e,t,o){const n=e.querySelectorAll("h1, h2, h3, h4, h5, h6");if(t.innerHTML="",n.length===0){t.innerHTML='<div style="padding:16px;color:var(--text-muted);font-size:var(--fs-xs);">No headings found</div>';return}n.forEach(r=>{const i=parseInt(r.tagName[1]),l=document.createElement("a");l.className="toc-item",l.dataset.level=String(i),l.textContent=(r.textContent||"").replace(/#$/,"").trim(),l.href=`#${r.id}`,l.addEventListener("click",H=>{H.preventDefault(),r.scrollIntoView({behavior:"smooth",block:"start"}),t.querySelectorAll(".toc-item").forEach(Y=>Y.classList.remove("active")),l.classList.add("active"),history.replaceState(null,"",`#${r.id}`)}),t.appendChild(l)}),K(n,t,o)}function K(e,t,o){g&&g.disconnect(),g=new IntersectionObserver(n=>{n.forEach(r=>{if(r.isIntersecting){const i=r.target.id;t.querySelectorAll(".toc-item").forEach(l=>{l.classList.toggle("active",l.getAttribute("href")===`#${i}`)})}})},{root:o,rootMargin:"-20% 0px -60% 0px",threshold:0}),e.forEach(n=>g.observe(n))}const P=`# Homemade Sourdough Bread — A Complete Guide 🍞
 
-Welcome to the mission briefing. This document outlines the fundamental physics, trajectory calculations, and flight plans for our upcoming orbital insertions. 
+A step-by-step recipe for baking a rustic, crusty sourdough loaf at home. No commercial yeast needed — just flour, water, salt, and a living starter.
 
-## Mission Checklist
+## Prep Checklist
 
-- [x] **Pre-flight systems check** — verified telemetry and life support
-- [x] **Payload integration** — secured the primary satellite
-- [ ] **Launch sequence initiation** — awaiting favorable weather window
-- [ ] **Orbital circularization** — planned for T+45 minutes
+- [x] **Feed the starter** — 12 hours before mixing
+- [x] **Gather ingredients** — bread flour, whole wheat, salt, water
+- [ ] **Mix & bulk ferment** — 4–6 hours at room temp
+- [ ] **Shape, proof, and bake** — overnight cold proof, bake in the morning
 
-## Essential Physics (LaTeX Math)
+## Ingredients
 
-Inline math: To calculate the gravitational force between two bodies, we use Newton's law of universal gravitation: $F = G \\frac{m_1 m_2}{r^2}$.
+| Ingredient | Weight | Baker's % |
+|---|---|---:|
+| Bread flour | 400 g | 80% |
+| Whole wheat flour | 100 g | 20% |
+| Water (warm) | 375 g | 75% |
+| Sourdough starter | 100 g | 20% |
+| Fine sea salt | 10 g | 2% |
 
-The **vis-viva equation** is crucial for determining the velocity $v$ of a body in an elliptical orbit:
+## The Science Behind It
 
-$$v^2 = GM \\left( \\frac{2}{r} - \\frac{1}{a} \\right)$$
+Sourdough fermentation relies on wild yeast and lactic acid bacteria. The **hydration level** is the ratio of water to flour by weight: $H = \\frac{m_{\\text{water}}}{m_{\\text{flour}}} \\times 100\\%$.
 
-To calculate the change in velocity required for orbital maneuvers, we rely on the **Tsiolkovsky rocket equation**:
+During bulk fermentation, yeast produces $\\text{CO}_2$ through anaerobic respiration:
 
-$$\\Delta v = v_e \\ln \\frac{m_0}{m_f}$$
+$$\\text{C}_6\\text{H}_{12}\\text{O}_6 \\xrightarrow{\\text{yeast}} 2\\text{C}_2\\text{H}_5\\text{OH} + 2\\text{CO}_2$$
 
-We track spacecraft orientation using state vectors in 3D space:
+The rate of fermentation follows an Arrhenius-style temperature dependence:
 
-$$\\mathbf{S} = \\begin{pmatrix} x \\\\ y \\\\ z \\\\ v_x \\\\ v_y \\\\ v_z \\end{pmatrix}$$
+$$k(T) = A \\cdot e^{-E_a / RT}$$
 
-## Telemetry Systems (Syntax Highlighting)
+A common rule of thumb: for every $5°\\text{C}$ increase in dough temperature, fermentation speed roughly doubles. You can estimate proof time $t$ at a given temperature $T$ relative to a reference:
+
+$$t(T) = t_0 \\cdot 2^{(T_0 - T)/5}$$
+
+## Method
+
+### Autolyse & Mix
 
 \`\`\`python
-import math
+# Baker's formula calculator
+def recipe(flour_g: float, hydration: float = 0.75, salt: float = 0.02, starter: float = 0.20):
+    """Calculate ingredient weights from total flour weight."""
+    return {
+        "flour":   f"{flour_g:.0f} g",
+        "water":   f"{flour_g * hydration:.0f} g",
+        "salt":    f"{flour_g * salt:.0f} g",
+        "starter": f"{flour_g * starter:.0f} g",
+    }
 
-def calculate_escape_velocity(mass: float, radius: float) -> float:
-    """Calculate escape velocity in m/s given mass (kg) and radius (m)."""
-    G = 6.67430e-11 # Gravitational constant
-    return math.sqrt((2 * G * mass) / radius)
-
-earth_mass = 5.972e24
-earth_radius = 6371000
-v_escape = calculate_escape_velocity(earth_mass, earth_radius)
-
-print(f"Earth escape velocity: {v_escape / 1000:.2f} km/s")
+print(recipe(500))
+# {'flour': '500 g', 'water': '375 g', 'salt': '10 g', 'starter': '100 g'}
 \`\`\`
+
+### Bulk Fermentation Schedule
 
 \`\`\`javascript
-// Trajectory adjustment calculator
-const calculateDeltaV = (exhaustVelocity, initialMass, finalMass) => {
-  if (finalMass <= 0) throw new Error("Final mass must be greater than zero");
-  return exhaustVelocity * Math.log(initialMass / finalMass);
-};
+// Stretch-and-fold timer
+const folds = [
+  { time: "0:00", action: "Mix dough, start bulk ferment" },
+  { time: "0:30", action: "Stretch & fold #1" },
+  { time: "1:00", action: "Stretch & fold #2" },
+  { time: "1:30", action: "Stretch & fold #3" },
+  { time: "2:00", action: "Stretch & fold #4 (if needed)" },
+  { time: "4:00", action: "Check: dough should be 50% larger" },
+];
 
-console.log(\`Required Delta-v: \${calculateDeltaV(4500, 50000, 15000).toFixed(2)} m/s\`);
+folds.forEach(({ time, action }) => console.log(\`[\${time}] \${action}\`));
 \`\`\`
 
-## Celestial Targets
-
-| Body | Mass (kg) | Radius (km) | Surface Gravity |
-|---------|--------|-------|-------|
-| Earth | $5.97 \\times 10^{24}$ | 6,371 | $9.81 \\text{ m/s}^2$ |
-| Moon | $7.34 \\times 10^{22}$ | 1,737 | $1.62 \\text{ m/s}^2$ |
-| Mars | $6.42 \\times 10^{23}$ | 3,389 | $3.72 \\text{ m/s}^2$ |
-
-## Mission Flight Plan (Mermaid Diagrams)
-
-Our standard launch procedure is mapped out below:
+## Baking Day Timeline
 
 \`\`\`mermaid
 sequenceDiagram
-    participant MC as Mission Control
-    participant LV as Launch Vehicle
-    participant P as Payload
-    
-    MC->>LV: Initiate Ignition Sequence
-    LV-->>MC: Liftoff Confirmed
-    LV->>LV: Max-Q Reached
-    LV->>P: Fairing Separation
-    LV->>P: Payload Deployment
-    P-->>MC: Telemetry Established
+    participant B as Baker
+    participant D as Dough
+    participant O as Dutch Oven
+
+    B->>D: Remove from fridge
+    B->>O: Preheat to 250 °C (45 min)
+    B->>D: Score with razor blade
+    B->>O: Place dough inside, lid on
+    O->>O: Bake 20 min (steamed)
+    B->>O: Remove lid
+    O->>O: Bake 20 min (browning)
+    O-->>B: Golden loaf ready
 \`\`\`
 
-Contingency flowchart for stage separation anomalies:
+## Troubleshooting
 
 \`\`\`mermaid
 flowchart TD
-    A["Stage 1 MECO"] --> B{"Separation Confirmed?"}
-    B -- Yes --> C["Ignite Stage 2"]
-    B -- No --> D["Trigger Backup Pyrotechnics"]
-    D --> E{"Backup Successful?"}
-    E -- Yes --> C
-    E -- No --> F["Abort to Ocean Splashdown"]
-    C --> G["Continue to Orbit"]
+    A["Loaf is too flat"] --> B{"Starter active?"}
+    B -- Yes --> C{"Bulk ferment long enough?"}
+    C -- Yes --> D["Shaping was too gentle — build more tension"]
+    C -- No --> E["Extend bulk ferment by 1 hour"]
+    B -- No --> F["Feed starter twice daily for 3 days"]
+    F --> G["Float test: spoonful should float in water"]
+    G --> H["Retry bake"]
 \`\`\`
 
-## Mission Logs
+## Tips from the Kitchen
 
-> "Somewhere, something incredible is waiting to be known."
-> — Carl Sagan
-
-## Status Alerts
+> "The best bread comes from dough that's slightly harder to handle than you'd like. Wetter dough means bigger holes and a better crust."
+> — Chad Robertson, *Tartine Bread*
 
 > [!NOTE]
-> The launch window opens at 04:00 UTC and remains valid for exactly 120 minutes.
+> Use the **poke test** to check proof: press the dough gently — it should spring back slowly, leaving a slight indent.
 
 > [!TIP]
-> Keep an eye on the telemetry dashboard for real-time apoapsis and periapsis updates.
+> For an extra-crispy crust, add a few ice cubes to the bottom of the oven when you start baking.
 
 > [!WARNING]
-> High upper-level winds detected. Monitoring structural load thresholds.
+> Do not skip the cold proof. Shaping a warm, fully-fermented dough leads to a flat loaf. Overnight fridge rest firms the dough and develops flavor.
 
 > [!CAUTION]
-> Manual override of the flight computer is strictly prohibited without flight director approval.
+> The Dutch oven reaches 250 °C — always use heavy oven mitts. Steam burns from removing the lid are the most common baking injury.
 
-## Visual Reconnaissance
+## The Finished Loaf
 
-Current view of the launch facility (simulated):
+![Freshly baked sourdough bread](https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&h=400&fit=crop)
 
-![Space Launch](https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=800&h=400&fit=crop)
+## Quick Reference
 
-## Formatting Checks
-
-Ensure all sensors are **online**, *calibrated*, and ~~deprecated systems~~ are disconnected. Run the \`sys_diagnostic\` routine before accessing the [flight terminal](https://nasa.gov).
+This recipe makes a **single round loaf** (about 850 g baked). The crumb should be **open** and *slightly tangy*, with ~~dense patches~~ nowhere in sight. Check your starter with the \`float test\` before mixing, and adjust timing with a [bulk ferment calculator](https://www.theperfectloaf.com).
 
 ---
 
-*Mission Control Dashboard v2.4.1 — Ad Astra*
+*Last baked: Sunday morning — the best alarm clock is the smell of bread in the oven.*
 `,z=`# Markdown to HTML Converter
 
 Paste or type your **Markdown** on the left and see the rendered **HTML** output in real-time on the right. This free tool converts any valid Markdown into clean, semantic HTML instantly.
@@ -217,7 +223,7 @@ Unordered:
 ---
 
 *Start typing or paste your Markdown above to convert it to HTML instantly.*
-`,W=`# LaTeX Math Editor
+`,V=`# LaTeX Math Editor
 
 Write mathematical expressions using **LaTeX syntax** and see them rendered beautifully in real-time. Supports both inline math and display (block) equations powered by KaTeX.
 
@@ -546,7 +552,7 @@ Use colons in the separator row to control alignment:
 ---
 
 *Edit the tables above or create your own below.*
-`;function Q(){const e=window.location.pathname.replace(/\/$/,"")||"/";return{"/":A,"/markdown-to-html":z,"/latex-editor":W,"/mermaid-editor":X,"/markdown-table-generator":j}[e]??A}const J="https://mdview.co";async function Z(e){const t=await fetch(`${J}/api/share`,{method:"POST",body:e,headers:{"Content-Type":"text/plain"}});if(!(t.headers.get("content-type")||"").includes("application/json"))throw new Error("Share service unavailable. Please try again later.");const n=await t.json();if(!t.ok)throw new Error(n.error||`Share failed (${t.status})`);return n}let s=null,p=null;function $(){return s||(s=document.createElement("div"),s.className="share-modal-overlay hidden",s.innerHTML=`
+`;function Q(){const e=window.location.pathname.replace(/\/$/,"")||"/";return{"/":P,"/markdown-to-html":z,"/latex-editor":V,"/mermaid-editor":X,"/markdown-table-generator":j}[e]??P}const J="https://mdview.co";async function Z(e){const t=await fetch(`${J}/api/share`,{method:"POST",body:e,headers:{"Content-Type":"text/plain"}});if(!(t.headers.get("content-type")||"").includes("application/json"))throw new Error("Share service unavailable. Please try again later.");const n=await t.json();if(!t.ok)throw new Error(n.error||`Share failed (${t.status})`);return n}let s=null,h=null;function $(){return s||(s=document.createElement("div"),s.className="share-modal-overlay hidden",s.innerHTML=`
     <div class="share-modal">
       <div class="share-modal-header">
         <span>Share This Document</span>
@@ -564,5 +570,5 @@ Use colons in the separator row to control alignment:
       </div>
       <div class="share-modal-error hidden"></div>
     </div>
-  `,document.body.appendChild(s),p=s.querySelector(".share-modal-url"),s.querySelector(".share-modal-close").addEventListener("click",E),s.addEventListener("click",e=>{e.target===s&&E()}),s.querySelector(".share-modal-copy").addEventListener("click",()=>{p?.value&&navigator.clipboard.writeText(p.value).then(()=>{f("Share link copied to clipboard!")})}),document.addEventListener("keydown",e=>{e.key==="Escape"&&s&&!s.classList.contains("hidden")&&E()}),s)}function ee(){$().classList.remove("hidden"),M(!0),S(null)}function E(){s?.classList.add("hidden")}function M(e){const t=$(),r=t.querySelector(".share-modal-body"),n=t.querySelector(".share-modal-loading");r.classList.toggle("hidden",e),n.classList.toggle("hidden",!e)}function te(e){$(),p&&(p.value=e),M(!1),S(null)}function S(e){const r=$().querySelector(".share-modal-error");e?(r.textContent=e,r.classList.remove("hidden"),M(!1)):(r.textContent="",r.classList.add("hidden"))}const a=e=>document.querySelector(e),c=a("#editor"),v=a("#preview"),ae=a("#preview-scroll"),R=a("#main"),w=a("#toc-dropdown"),ie=a("#toc-list"),y=a("#file-input"),ne=a("#file-name"),re=a("#toast"),d=a("#editor-panel"),L=a("#resize-handle"),oe=a("#btn-open"),se=a("#btn-theme"),T=a("#btn-toc"),le=a("#btn-copy"),ce=a("#btn-print"),de=a("#btn-share"),C=a("#btn-view-editor"),k=a("#btn-view-split"),x=a("#btn-view-preview"),_=a("#icon-moon"),I=a("#icon-sun");let u=!1,O;U(re);function D(){Y(c.value,v),V(v,ie,ae),ue(c.value)}function q(){clearTimeout(O),O=setTimeout(D,120)}function ue(e){const t=e.trim(),r=t?t.split(/\s+/).length:0,n=t.length;a("#stat-words").textContent=`${r} word${r!==1?"s":""}`,a("#stat-chars").textContent=`${n} char${n!==1?"s":""}`}function B(e){document.documentElement.setAttribute("data-theme",e),localStorage.setItem("md-viewer-theme",e),e==="dark"?(_.style.display="",I.style.display="none"):(_.style.display="none",I.style.display="")}function me(){const e=document.documentElement.getAttribute("data-theme");B(e==="dark"?"light":"dark")}function m(e){R.className=`main view-${e}`,[C,k,x].forEach(t=>t.classList.remove("active")),e==="editor"&&C.classList.add("active"),e==="split"&&k.classList.add("active"),e==="preview"&&x.classList.add("active")}function N(){u=!u,w.classList.toggle("hidden",!u),T.classList.toggle("active",u)}function F(){u&&(u=!1,w.classList.add("hidden"),T.classList.remove("active"))}document.addEventListener("mousedown",e=>{u&&!w.contains(e.target)&&!T.contains(e.target)&&F()});w.addEventListener("click",e=>{e.target.closest(".toc-item")&&F()});function P(e){const t=new FileReader;t.onload=r=>{c.value=r.target.result,ne.textContent=e.name,D(),f(`Loaded ${e.name}`)},t.readAsText(e)}let h=0;d.addEventListener("dragenter",e=>{e.preventDefault(),h++,d.classList.add("dragover")});d.addEventListener("dragleave",e=>{e.preventDefault(),h--,h<=0&&(h=0,d.classList.remove("dragover"))});d.addEventListener("dragover",e=>e.preventDefault());d.addEventListener("drop",e=>{e.preventDefault(),h=0,d.classList.remove("dragover");const t=e.dataTransfer?.files[0];t&&P(t)});document.addEventListener("dragover",e=>e.preventDefault());document.addEventListener("drop",e=>{e.preventDefault();const t=e.dataTransfer?.files?.[0];t&&P(t)});let b=!1;L.addEventListener("mousedown",e=>{b=!0,L.classList.add("active"),document.body.style.cursor="col-resize",document.body.style.userSelect="none",e.preventDefault()});document.addEventListener("mousemove",e=>{if(!b)return;const t=R.getBoundingClientRect(),n=(e.clientX-t.left)/t.width*100;n>15&&n<85&&(d.style.flex=`0 0 ${n}%`,a("#preview-panel").style.flex="1")});document.addEventListener("mouseup",()=>{b&&(b=!1,L.classList.remove("active"),document.body.style.cursor="",document.body.style.userSelect="")});c.addEventListener("input",q);oe.addEventListener("click",()=>y.click());y.addEventListener("change",()=>{const e=y.files?.[0];e&&P(e)});se.addEventListener("click",me);T.addEventListener("click",N);C.addEventListener("click",()=>m("editor"));k.addEventListener("click",()=>m("split"));x.addEventListener("click",()=>m("preview"));le.addEventListener("click",()=>{navigator.clipboard.writeText(v.innerHTML).then(()=>f("HTML copied to clipboard"))});ce.addEventListener("click",()=>window.print());de.addEventListener("click",async()=>{const e=c.value.trim();if(!e){f("Nothing to share — write some Markdown first.");return}ee();try{const t=await Z(e);te(t.url)}catch(t){S(t instanceof Error?t.message:"Failed to create share link.")}});document.addEventListener("keydown",e=>{const t=e.metaKey||e.ctrlKey;t&&e.key==="o"&&(e.preventDefault(),y.click()),t&&e.key==="b"&&(e.preventDefault(),N()),t&&e.key==="p"&&(e.preventDefault(),window.print()),t&&e.shiftKey&&e.key==="C"&&(e.preventDefault(),navigator.clipboard.writeText(v.innerHTML).then(()=>f("HTML copied"))),t&&e.key==="1"&&(e.preventDefault(),m("editor")),t&&e.key==="2"&&(e.preventDefault(),m("split")),t&&e.key==="3"&&(e.preventDefault(),m("preview"))});c.addEventListener("keydown",e=>{if(e.key==="Tab"){e.preventDefault();const t=c.selectionStart,r=c.selectionEnd;c.value=c.value.substring(0,t)+"  "+c.value.substring(r),c.selectionStart=c.selectionEnd=t+2,q()}});(function(){const t=localStorage.getItem("md-viewer-theme")||"dark";B(t),c.value=Q(),D()})();
-//# sourceMappingURL=main-BQ9P92ct.js.map
+  `,document.body.appendChild(s),h=s.querySelector(".share-modal-url"),s.querySelector(".share-modal-close").addEventListener("click",k),s.addEventListener("click",e=>{e.target===s&&k()}),s.querySelector(".share-modal-copy").addEventListener("click",()=>{h?.value&&navigator.clipboard.writeText(h.value).then(()=>{p("Share link copied to clipboard!")})}),document.addEventListener("keydown",e=>{e.key==="Escape"&&s&&!s.classList.contains("hidden")&&k()}),s)}function ee(){$().classList.remove("hidden"),S(!0),D(null)}function k(){s?.classList.add("hidden")}function S(e){const t=$(),o=t.querySelector(".share-modal-body"),n=t.querySelector(".share-modal-loading");o.classList.toggle("hidden",e),n.classList.toggle("hidden",!e)}function te(e){$(),h&&(h.value=e),S(!1),D(null)}function D(e){const o=$().querySelector(".share-modal-error");e?(o.textContent=e,o.classList.remove("hidden"),S(!1)):(o.textContent="",o.classList.add("hidden"))}const a=e=>document.querySelector(e),d=a("#editor"),v=a("#preview"),ae=a("#preview-scroll"),I=a("#main"),w=a("#toc-dropdown"),re=a("#toc-list"),b=a("#file-input"),ne=a("#file-name"),oe=a("#toast"),c=a("#editor-panel"),E=a("#resize-handle"),ie=a("#btn-open"),se=a("#btn-theme"),T=a("#btn-toc"),le=a("#btn-copy"),de=a("#btn-print"),ce=a("#btn-share"),x=a("#btn-view-editor"),L=a("#btn-view-split"),C=a("#btn-view-preview"),_=a("#icon-moon"),O=a("#icon-sun");let u=!1,B;U(oe);function M(){G(d.value,v),W(v,re,ae),ue(d.value)}function R(){clearTimeout(B),B=setTimeout(M,120)}function ue(e){const t=e.trim(),o=t?t.split(/\s+/).length:0,n=t.length;a("#stat-words").textContent=`${o} word${o!==1?"s":""}`,a("#stat-chars").textContent=`${n} char${n!==1?"s":""}`}function q(e){document.documentElement.setAttribute("data-theme",e),localStorage.setItem("md-viewer-theme",e),e==="dark"?(_.style.display="",O.style.display="none"):(_.style.display="none",O.style.display="")}function me(){const e=document.documentElement.getAttribute("data-theme");q(e==="dark"?"light":"dark")}function m(e){I.className=`main view-${e}`,[x,L,C].forEach(t=>t.classList.remove("active")),e==="editor"&&x.classList.add("active"),e==="split"&&L.classList.add("active"),e==="preview"&&C.classList.add("active")}function N(){u=!u,w.classList.toggle("hidden",!u),T.classList.toggle("active",u)}function F(){u&&(u=!1,w.classList.add("hidden"),T.classList.remove("active"))}document.addEventListener("mousedown",e=>{u&&!w.contains(e.target)&&!T.contains(e.target)&&F()});w.addEventListener("click",e=>{e.target.closest(".toc-item")&&F()});function A(e){const t=new FileReader;t.onload=o=>{d.value=o.target.result,ne.textContent=e.name,M(),p(`Loaded ${e.name}`)},t.readAsText(e)}let f=0;c.addEventListener("dragenter",e=>{e.preventDefault(),f++,c.classList.add("dragover")});c.addEventListener("dragleave",e=>{e.preventDefault(),f--,f<=0&&(f=0,c.classList.remove("dragover"))});c.addEventListener("dragover",e=>e.preventDefault());c.addEventListener("drop",e=>{e.preventDefault(),f=0,c.classList.remove("dragover");const t=e.dataTransfer?.files[0];t&&A(t)});document.addEventListener("dragover",e=>e.preventDefault());document.addEventListener("drop",e=>{e.preventDefault();const t=e.dataTransfer?.files?.[0];t&&A(t)});let y=!1;E.addEventListener("mousedown",e=>{y=!0,E.classList.add("active"),document.body.style.cursor="col-resize",document.body.style.userSelect="none",e.preventDefault()});document.addEventListener("mousemove",e=>{if(!y)return;const t=I.getBoundingClientRect(),n=(e.clientX-t.left)/t.width*100;n>15&&n<85&&(c.style.flex=`0 0 ${n}%`,a("#preview-panel").style.flex="1")});document.addEventListener("mouseup",()=>{y&&(y=!1,E.classList.remove("active"),document.body.style.cursor="",document.body.style.userSelect="")});d.addEventListener("input",R);ie.addEventListener("click",()=>b.click());b.addEventListener("change",()=>{const e=b.files?.[0];e&&A(e)});se.addEventListener("click",me);T.addEventListener("click",N);x.addEventListener("click",()=>m("editor"));L.addEventListener("click",()=>m("split"));C.addEventListener("click",()=>m("preview"));le.addEventListener("click",()=>{navigator.clipboard.writeText(v.innerHTML).then(()=>p("HTML copied to clipboard"))});de.addEventListener("click",()=>window.print());ce.addEventListener("click",async()=>{const e=d.value.trim();if(!e){p("Nothing to share — write some Markdown first.");return}ee();try{const t=await Z(e);te(t.url)}catch(t){D(t instanceof Error?t.message:"Failed to create share link.")}});document.addEventListener("keydown",e=>{const t=e.metaKey||e.ctrlKey;t&&e.key==="o"&&(e.preventDefault(),b.click()),t&&e.key==="b"&&(e.preventDefault(),N()),t&&e.key==="p"&&(e.preventDefault(),window.print()),t&&e.shiftKey&&e.key==="C"&&(e.preventDefault(),navigator.clipboard.writeText(v.innerHTML).then(()=>p("HTML copied"))),t&&e.key==="1"&&(e.preventDefault(),m("editor")),t&&e.key==="2"&&(e.preventDefault(),m("split")),t&&e.key==="3"&&(e.preventDefault(),m("preview"))});d.addEventListener("keydown",e=>{if(e.key==="Tab"){e.preventDefault();const t=d.selectionStart,o=d.selectionEnd;d.value=d.value.substring(0,t)+"  "+d.value.substring(o),d.selectionStart=d.selectionEnd=t+2,R()}});(function(){const t=localStorage.getItem("md-viewer-theme")||"dark";q(t),d.value=Q(),M()})();
+//# sourceMappingURL=main-BAcoU2XN.js.map
