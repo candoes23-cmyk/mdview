@@ -109,10 +109,6 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow: hidden;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
   transition: background var(--transition), color var(--transition);
 }
 
@@ -120,8 +116,8 @@ body {
 #app {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* ---------- Toolbar ---------- */
@@ -1353,6 +1349,7 @@ body {
   .toast,
   .ad-footer,
   .site-nav,
+  .seo-content,
   #file-input {
     display: none !important;
   }
@@ -1511,6 +1508,211 @@ body {
     content: " (" attr(href) ")";
     font-size: 0.8em;
     color: #666;
+  }
+}
+
+/* ---------- SEO Content Section ---------- */
+.seo-content {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 64px 24px;
+}
+
+.seo-content-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.seo-content h2 {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  margin-top: 48px;
+}
+
+.seo-content h2:first-child {
+  margin-top: 0;
+}
+
+.seo-content > .seo-content-inner > p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.seo-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.seo-feature {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.seo-feature h3 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.seo-feature p {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.seo-feature code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  background: var(--bg-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--accent);
+}
+
+.seo-usecases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.seo-usecase h3 {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.seo-usecase p {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.seo-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.seo-tool-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.seo-tool-link:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.seo-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.seo-faq details {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.seo-faq summary {
+  padding: 14px 20px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.seo-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.seo-faq summary::after {
+  content: "+";
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.seo-faq details[open] summary::after {
+  content: "\2212";
+}
+
+.seo-faq details p {
+  padding: 0 20px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.seo-faq code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  background: var(--bg-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .seo-content {
+    padding: 40px 16px;
+  }
+
+  .seo-features {
+    grid-template-columns: 1fr;
+  }
+
+  .seo-usecases {
+    grid-template-columns: 1fr;
+  }
+
+  .seo-tools {
+    flex-direction: column;
+  }
+
+  .seo-tool-link {
+    text-align: center;
   }
 }
 
