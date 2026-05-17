@@ -42,8 +42,56 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/markdown-table-generator/" />
   </url>
   <url>
+    <loc>https://mdview.co/guides/markdown-syntax/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/guides/markdown-syntax/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/guides/markdown-syntax/" />
+  </url>
+  <url>
+    <loc>https://mdview.co/guides/latex-math/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/guides/latex-math/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/guides/latex-math/" />
+  </url>
+  <url>
+    <loc>https://mdview.co/guides/mermaid-diagrams/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/guides/mermaid-diagrams/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/guides/mermaid-diagrams/" />
+  </url>
+  <url>
+    <loc>https://mdview.co/guides/markdown-for-github/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/guides/markdown-for-github/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/guides/markdown-for-github/" />
+  </url>
+  <url>
+    <loc>https://mdview.co/guides/markdown-best-practices/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/guides/markdown-best-practices/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/guides/markdown-best-practices/" />
+  </url>
+  <url>
+    <loc>https://mdview.co/faq/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/faq/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdview.co/faq/" />
+  </url>
+  <url>
     <loc>https://mdview.co/about/</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mdview.co/about/" />
