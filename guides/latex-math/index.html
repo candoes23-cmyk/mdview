@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta -->
+  <title>LaTeX Math Syntax Guide — Equations, Symbols &amp; Formulas | MD Viewer</title>
+  <meta name="description"
+    content="Complete LaTeX math reference for Markdown. Learn how to write equations, fractions, matrices, Greek letters, and mathematical notation with KaTeX-compatible syntax." />
+  <meta name="keywords"
+    content="latex math, latex equations, latex symbols, katex, math in markdown, latex fractions, latex matrix, latex greek letters, mathematical notation" />
+  <meta name="author" content="MD Viewer" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="canonical" href="https://mdview.co/guides/latex-math/" />
+  <link rel="alternate" hreflang="en" href="https://mdview.co/guides/latex-math/" />
+  <link rel="alternate" hreflang="x-default" href="https://mdview.co/guides/latex-math/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="LaTeX Math Syntax Guide — Equations, Symbols & Formulas" />
+  <meta property="og:description"
+    content="Complete LaTeX math reference for Markdown. Equations, fractions, matrices, Greek letters, and more." />
+  <meta property="og:url" content="https://mdview.co/guides/latex-math/" />
+  <meta property="og:site_name" content="MD Viewer" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://mdview.co/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LaTeX Math Syntax Guide — Equations, Symbols & Formulas" />
+  <meta name="twitter:description"
+    content="Complete LaTeX math reference for Markdown with KaTeX-compatible syntax." />
+  <meta name="twitter:image" content="https://mdview.co/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "LaTeX Math Syntax Guide — Equations, Symbols & Formulas",
+    "description": "Complete LaTeX math reference for Markdown. Learn how to write equations, fractions, matrices, Greek letters, and mathematical notation.",
+    "author": { "@type": "Organization", "name": "MD Viewer" },
+    "publisher": { "@type": "Organization", "name": "MD Viewer", "url": "https://mdview.co" },
+    "mainEntityOfPage": "https://mdview.co/guides/latex-math/",
+    "datePublished": "2025-01-20",
+    "dateModified": "2025-05-10"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "MD Viewer", "item": "https://mdview.co/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://mdview.co/guides/markdown-syntax/" },
+      { "@type": "ListItem", "position": 3, "name": "LaTeX Math", "item": "https://mdview.co/guides/latex-math/" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-surface: #161b22;
+      --text: #e6edf3;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff;
+      --border: rgba(136, 198, 255, 0.08);
+      --code-bg: #1c2128;
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --bg-surface: #f6f8fa;
+      --text: #1f2328;
+      --text-secondary: #656d76;
+      --accent: #0969da;
+      --border: rgba(31, 35, 40, 0.08);
+      --code-bg: #f0f3f6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-surface);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .page-header a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 15px; }
+    .page-header a:hover { text-decoration: underline; }
+    .page-header .sep { width: 1px; height: 20px; background: var(--border); }
+    .page-header .title { font-size: 14px; color: var(--text-secondary); }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+
+    .intro {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 { font-size: 1.05rem; font-weight: 600; margin-top: 28px; margin-bottom: 10px; }
+
+    p, li { font-size: 15px; margin-bottom: 12px; color: var(--text-secondary); }
+    ul, ol { padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--accent); }
+    strong { color: var(--text); }
+
+    .syntax-block {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 12px 0 20px;
+      overflow-x: auto;
+    }
+
+    .syntax-block code {
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text);
+      white-space: pre;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+
+    th, td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; }
+    th { background: var(--bg-surface); font-weight: 600; color: var(--text); }
+    td { color: var(--text-secondary); }
+
+    td code, p code, li code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .cta-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .cta-box p { margin-bottom: 12px; }
+
+    .cta-box a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .cta-box a:hover { opacity: 0.9; }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .site-footer a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+    .site-footer a:hover { color: var(--accent); }
+  </style>
+</head>
+
+<body>
+  <header class="page-header">
+    <a href="/">MD Viewer</a>
+    <div class="sep"></div>
+    <span class="title">LaTeX Math Guide</span>
+  </header>
+
+  <main>
+    <h1>LaTeX Math Syntax Guide</h1>
+    <p class="intro">LaTeX is the standard for typesetting mathematical expressions in academic and technical writing. In Markdown, you can embed LaTeX math using dollar sign delimiters — <code>$...$</code> for inline math and <code>$$...$$</code> for display (block) math. MD Viewer renders math using KaTeX, a fast and accurate math typesetting library. This guide covers the most commonly used LaTeX commands.</p>
+
+    <h2>Inline vs. Display Math</h2>
+    <p>There are two ways to include math in your Markdown documents:</p>
+    <div class="syntax-block"><code>Inline math: The formula $E = mc^2$ appears within text.
+
+Display math (centered on its own line):
+$$
+\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$</code></div>
+    <p><strong>Inline math</strong> flows with your text and is useful for referencing variables or short expressions. <strong>Display math</strong> is centered and given its own vertical space, ideal for important equations you want to stand out.</p>
+
+    <h2>Basic Arithmetic &amp; Operators</h2>
+    <table>
+      <thead>
+        <tr><th>Description</th><th>LaTeX</th><th>Output</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Addition</td><td><code>a + b</code></td><td>a + b</td></tr>
+        <tr><td>Subtraction</td><td><code>a - b</code></td><td>a - b</td></tr>
+        <tr><td>Multiplication</td><td><code>a \times b</code></td><td>a &times; b</td></tr>
+        <tr><td>Division</td><td><code>a \div b</code></td><td>a &divide; b</td></tr>
+        <tr><td>Plus-minus</td><td><code>\pm</code></td><td>&plusmn;</td></tr>
+        <tr><td>Not equal</td><td><code>\neq</code></td><td>&ne;</td></tr>
+        <tr><td>Less than or equal</td><td><code>\leq</code></td><td>&le;</td></tr>
+        <tr><td>Greater than or equal</td><td><code>\geq</code></td><td>&ge;</td></tr>
+        <tr><td>Approximately</td><td><code>\approx</code></td><td>&asymp;</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Fractions</h2>
+    <p>Use <code>\frac{numerator}{denominator}</code> to create fractions:</p>
+    <div class="syntax-block"><code>$\frac{1}{2}$          — Simple fraction
+$\frac{x+1}{x-1}$     — Expression fraction
+$\frac{\partial f}{\partial x}$  — Partial derivative
+$\cfrac{1}{1+\cfrac{1}{2}}$     — Continued fraction</code></div>
+    <p>For inline fractions that appear too large, you can use <code>\tfrac</code> (text-style fraction) to keep them compact.</p>
+
+    <h2>Superscripts and Subscripts</h2>
+    <p>Use <code>^</code> for superscripts and <code>_</code> for subscripts. Wrap multi-character expressions in curly braces:</p>
+    <div class="syntax-block"><code>$x^2$           — x squared
+$x^{n+1}$       — Multi-character exponent
+$a_i$           — Subscript
+$a_{i,j}$       — Multi-character subscript
+$x_i^2$         — Both subscript and superscript
+${}_nC_r$       — Leading subscript</code></div>
+
+    <h2>Greek Letters</h2>
+    <table>
+      <thead>
+        <tr><th>Lowercase</th><th>LaTeX</th><th>Uppercase</th><th>LaTeX</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>&alpha;</td><td><code>\alpha</code></td><td>A</td><td><code>A</code></td></tr>
+        <tr><td>&beta;</td><td><code>\beta</code></td><td>B</td><td><code>B</code></td></tr>
+        <tr><td>&gamma;</td><td><code>\gamma</code></td><td>&Gamma;</td><td><code>\Gamma</code></td></tr>
+        <tr><td>&delta;</td><td><code>\delta</code></td><td>&Delta;</td><td><code>\Delta</code></td></tr>
+        <tr><td>&epsilon;</td><td><code>\epsilon</code></td><td>E</td><td><code>E</code></td></tr>
+        <tr><td>&theta;</td><td><code>\theta</code></td><td>&Theta;</td><td><code>\Theta</code></td></tr>
+        <tr><td>&lambda;</td><td><code>\lambda</code></td><td>&Lambda;</td><td><code>\Lambda</code></td></tr>
+        <tr><td>&mu;</td><td><code>\mu</code></td><td>M</td><td><code>M</code></td></tr>
+        <tr><td>&pi;</td><td><code>\pi</code></td><td>&Pi;</td><td><code>\Pi</code></td></tr>
+        <tr><td>&sigma;</td><td><code>\sigma</code></td><td>&Sigma;</td><td><code>\Sigma</code></td></tr>
+        <tr><td>&phi;</td><td><code>\phi</code></td><td>&Phi;</td><td><code>\Phi</code></td></tr>
+        <tr><td>&omega;</td><td><code>\omega</code></td><td>&Omega;</td><td><code>\Omega</code></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Sums, Products, and Integrals</h2>
+    <div class="syntax-block"><code>$$\sum_{i=1}^{n} x_i$$             — Summation
+
+$$\prod_{i=1}^{n} x_i$$            — Product
+
+$$\int_a^b f(x)\,dx$$              — Definite integral
+
+$$\iint_D f(x,y)\,dA$$             — Double integral
+
+$$\oint_C \vec{F} \cdot d\vec{r}$$ — Line integral
+
+$$\lim_{x \to \infty} f(x)$$       — Limit</code></div>
+    <p>The <code>\,</code> adds a thin space before <code>dx</code>, which is standard typographic practice in integrals.</p>
+
+    <h2>Matrices</h2>
+    <p>Create matrices with different bracket styles using environment commands:</p>
+    <div class="syntax-block"><code>$$\begin{pmatrix} a & b \\ c & d \end{pmatrix}$$    — Round brackets
+
+$$\begin{bmatrix} a & b \\ c & d \end{bmatrix}$$    — Square brackets
+
+$$\begin{vmatrix} a & b \\ c & d \end{vmatrix}$$    — Determinant (pipes)
+
+$$\begin{matrix} a & b \\ c & d \end{matrix}$$      — No brackets</code></div>
+    <p>Use <code>&amp;</code> to separate columns and <code>\\</code> to start a new row. For larger matrices, you can use <code>\cdots</code>, <code>\vdots</code>, and <code>\ddots</code> for ellipses.</p>
+
+    <h2>Common Functions</h2>
+    <p>LaTeX provides named functions that render in upright (Roman) font rather than italic:</p>
+    <div class="syntax-block"><code>\sin, \cos, \tan, \cot, \sec, \csc
+\arcsin, \arccos, \arctan
+\ln, \log, \exp
+\min, \max, \sup, \inf
+\det, \dim, \ker, \gcd</code></div>
+    <p>Example usage: <code>$\sin^2\theta + \cos^2\theta = 1$</code></p>
+
+    <h2>Roots and Radicals</h2>
+    <div class="syntax-block"><code>$\sqrt{x}$         — Square root
+$\sqrt[3]{x}$      — Cube root
+$\sqrt[n]{x}$      — nth root
+$\sqrt{x^2 + y^2}$ — Complex expression under radical</code></div>
+
+    <h2>Brackets and Delimiters</h2>
+    <p>Use <code>\left</code> and <code>\right</code> for auto-sizing brackets that grow with their content:</p>
+    <div class="syntax-block"><code>$\left( \frac{x}{y} \right)$          — Parentheses
+$\left[ \frac{x}{y} \right]$          — Square brackets
+$\left\{ \frac{x}{y} \right\}$        — Curly braces
+$\left| \frac{x}{y} \right|$          — Absolute value
+$\left\langle x, y \right\rangle$     — Angle brackets</code></div>
+
+    <h2>Aligned Equations</h2>
+    <p>Use the <code>aligned</code> environment for multi-line equations aligned at a specific point (usually the equals sign):</p>
+    <div class="syntax-block"><code>$$
+\begin{aligned}
+  f(x) &= x^2 + 2x + 1 \\
+       &= (x + 1)^2
+\end{aligned}
+$$</code></div>
+    <p>The <code>&amp;</code> marks the alignment point, and <code>\\</code> creates a new line.</p>
+
+    <h2>Cases (Piecewise Functions)</h2>
+    <div class="syntax-block"><code>$$
+f(x) = \begin{cases}
+  x^2 &amp; \text{if } x \geq 0 \\
+  -x  &amp; \text{if } x &lt; 0
+\end{cases}
+$$</code></div>
+
+    <h2>Arrows and Notation</h2>
+    <table>
+      <thead>
+        <tr><th>Symbol</th><th>LaTeX</th><th>Symbol</th><th>LaTeX</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>&rarr;</td><td><code>\rightarrow</code></td><td>&larr;</td><td><code>\leftarrow</code></td></tr>
+        <tr><td>&rArr;</td><td><code>\Rightarrow</code></td><td>&lArr;</td><td><code>\Leftarrow</code></td></tr>
+        <tr><td>&harr;</td><td><code>\leftrightarrow</code></td><td>&hArr;</td><td><code>\Leftrightarrow</code></td></tr>
+        <tr><td>&mapsto;</td><td><code>\mapsto</code></td><td>&infin;</td><td><code>\infty</code></td></tr>
+        <tr><td>&nabla;</td><td><code>\nabla</code></td><td>&part;</td><td><code>\partial</code></td></tr>
+        <tr><td>&isin;</td><td><code>\in</code></td><td>&notin;</td><td><code>\notin</code></td></tr>
+        <tr><td>&sub;</td><td><code>\subset</code></td><td>&sube;</td><td><code>\subseteq</code></td></tr>
+        <tr><td>&cup;</td><td><code>\cup</code></td><td>&cap;</td><td><code>\cap</code></td></tr>
+        <tr><td>&forall;</td><td><code>\forall</code></td><td>&exist;</td><td><code>\exists</code></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Accents and Decorations</h2>
+    <div class="syntax-block"><code>$\hat{x}$      — Hat (unit vector)
+$\bar{x}$      — Bar (mean)
+$\vec{x}$      — Vector arrow
+$\dot{x}$      — Single dot (time derivative)
+$\ddot{x}$     — Double dot (acceleration)
+$\tilde{x}$    — Tilde
+$\overline{AB}$ — Overline (segment)
+$\overbrace{x+y}^{\text{sum}}$ — Overbrace with label</code></div>
+
+    <h2>Common Formulas Quick Reference</h2>
+    <div class="syntax-block"><code>Quadratic formula:
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+Euler's identity:
+$$e^{i\pi} + 1 = 0$$
+
+Binomial theorem:
+$$(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k} y^k$$
+
+Taylor series:
+$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n$$
+
+Gaussian integral:
+$$\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}$$</code></div>
+
+    <div class="cta-box">
+      <p><strong>Try LaTeX math live</strong> — write equations in the MD Viewer editor or use our dedicated LaTeX editor for focused math work.</p>
+      <a href="/latex-editor/">Open LaTeX Editor</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/guides/markdown-syntax/">Syntax</a>
+    <a href="/guides/latex-math/">LaTeX</a>
+    <a href="/guides/mermaid-diagrams/">Mermaid</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta -->
+  <title>Markdown Best Practices — Writing Better Documentation | MD Viewer</title>
+  <meta name="description"
+    content="Learn Markdown best practices for writing clear, maintainable documentation. Tips for headings, links, code blocks, file structure, and consistent formatting across teams." />
+  <meta name="keywords"
+    content="markdown best practices, markdown tips, writing documentation, markdown style guide, documentation tips, technical writing markdown, readable markdown" />
+  <meta name="author" content="MD Viewer" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="canonical" href="https://mdview.co/guides/markdown-best-practices/" />
+  <link rel="alternate" hreflang="en" href="https://mdview.co/guides/markdown-best-practices/" />
+  <link rel="alternate" hreflang="x-default" href="https://mdview.co/guides/markdown-best-practices/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Markdown Best Practices — Writing Better Documentation" />
+  <meta property="og:description"
+    content="Tips and guidelines for writing clear, maintainable Markdown documentation." />
+  <meta property="og:url" content="https://mdview.co/guides/markdown-best-practices/" />
+  <meta property="og:site_name" content="MD Viewer" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://mdview.co/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Markdown Best Practices — Writing Better Documentation" />
+  <meta name="twitter:description"
+    content="Tips for writing clear, maintainable Markdown documentation." />
+  <meta name="twitter:image" content="https://mdview.co/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Markdown Best Practices — Writing Better Documentation",
+    "description": "Learn Markdown best practices for writing clear, maintainable documentation. Tips for structure, formatting, and consistency.",
+    "author": { "@type": "Organization", "name": "MD Viewer" },
+    "publisher": { "@type": "Organization", "name": "MD Viewer", "url": "https://mdview.co" },
+    "mainEntityOfPage": "https://mdview.co/guides/markdown-best-practices/",
+    "datePublished": "2025-02-20",
+    "dateModified": "2025-05-10"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "MD Viewer", "item": "https://mdview.co/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://mdview.co/guides/markdown-syntax/" },
+      { "@type": "ListItem", "position": 3, "name": "Best Practices", "item": "https://mdview.co/guides/markdown-best-practices/" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-surface: #161b22;
+      --text: #e6edf3;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff;
+      --border: rgba(136, 198, 255, 0.08);
+      --code-bg: #1c2128;
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --bg-surface: #f6f8fa;
+      --text: #1f2328;
+      --text-secondary: #656d76;
+      --accent: #0969da;
+      --border: rgba(31, 35, 40, 0.08);
+      --code-bg: #f0f3f6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-surface);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .page-header a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 15px; }
+    .page-header a:hover { text-decoration: underline; }
+    .page-header .sep { width: 1px; height: 20px; background: var(--border); }
+    .page-header .title { font-size: 14px; color: var(--text-secondary); }
+
+    main { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+    .intro { font-size: 16px; color: var(--text-secondary); margin-bottom: 36px; line-height: 1.7; }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 { font-size: 1.05rem; font-weight: 600; margin-top: 28px; margin-bottom: 10px; }
+
+    p, li { font-size: 15px; margin-bottom: 12px; color: var(--text-secondary); }
+    ul, ol { padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--accent); }
+    strong { color: var(--text); }
+
+    .syntax-block {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 12px 0 20px;
+      overflow-x: auto;
+    }
+
+    .syntax-block code {
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text);
+      white-space: pre;
+    }
+
+    .do-dont {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0 24px;
+    }
+
+    .do-dont .do, .do-dont .dont {
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .do-dont .do { border-left: 3px solid #3fb950; }
+    .do-dont .dont { border-left: 3px solid #f85149; }
+
+    .do-dont .label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .do .label { color: #3fb950; }
+    .dont .label { color: #f85149; }
+
+    .do-dont code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      white-space: pre;
+      display: block;
+      color: var(--text-secondary);
+    }
+
+    td code, p code, li code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .tip-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .tip-box strong { display: block; margin-bottom: 4px; }
+
+    .cta-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .cta-box p { margin-bottom: 12px; }
+    .cta-box a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .cta-box a:hover { opacity: 0.9; }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .site-footer a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+    .site-footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      .do-dont { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="page-header">
+    <a href="/">MD Viewer</a>
+    <div class="sep"></div>
+    <span class="title">Markdown Best Practices</span>
+  </header>
+
+  <main>
+    <h1>Markdown Best Practices</h1>
+    <p class="intro">Writing Markdown is easy. Writing <em>good</em> Markdown — clear, consistent, and maintainable across a team — takes intention. This guide covers practical conventions that make your documents easier to read both in their raw source form and when rendered. These practices are drawn from widely-adopted style guides used in open-source projects and technical writing teams.</p>
+
+    <h2>1. Document Structure</h2>
+
+    <h3>Start with a single H1</h3>
+    <p>Every document should have exactly one top-level heading (<code># Title</code>) that describes what the document is about. This becomes the page title in most renderers and is critical for accessibility and SEO.</p>
+    <div class="do-dont">
+      <div class="do">
+        <div class="label">Do</div>
+        <code># API Authentication Guide
+
+## Overview
+
+## Getting Started</code>
+      </div>
+      <div class="dont">
+        <div class="label">Don't</div>
+        <code>## API Authentication Guide
+
+## Overview
+
+## Getting Started</code>
+      </div>
+    </div>
+
+    <h3>Use heading levels sequentially</h3>
+    <p>Never skip heading levels — go from H2 to H3, not H2 to H4. This creates a proper document outline and helps screen readers navigate your content.</p>
+    <div class="do-dont">
+      <div class="do">
+        <div class="label">Do</div>
+        <code>## Installation
+### Prerequisites
+### Steps
+## Configuration
+### Environment Variables</code>
+      </div>
+      <div class="dont">
+        <div class="label">Don't</div>
+        <code>## Installation
+#### Prerequisites
+#### Steps
+## Configuration
+#### Environment Variables</code>
+      </div>
+    </div>
+
+    <h3>Add a brief introduction</h3>
+    <p>After the title, include 1-3 sentences explaining what this document covers and who it's for. Don't make readers guess whether this is the right document for their needs.</p>
+
+    <h2>2. Line Length and Wrapping</h2>
+    <p>There are two common approaches to line wrapping in Markdown source files:</p>
+    <ul>
+      <li><strong>One sentence per line</strong> — Each sentence starts on a new line. This makes diffs cleaner because changing one sentence doesn't reflow the entire paragraph.</li>
+      <li><strong>Soft wrap at 80-120 characters</strong> — Traditional approach that keeps lines readable in terminals and editors without soft-wrap.</li>
+    </ul>
+    <p>Pick one style and use it consistently across your project. The "one sentence per line" approach is increasingly popular because it produces better git diffs — a single sentence change shows as one added and one removed line, not a full paragraph rewrite.</p>
+
+    <div class="tip-box">
+      <strong>Tip: Git-friendly paragraphs</strong>
+      <p>When writing documentation that will be reviewed in pull requests, one-sentence-per-line makes reviewers' lives significantly easier. They can comment on specific sentences without quoting entire paragraphs.</p>
+    </div>
+
+    <h2>3. Consistent Formatting</h2>
+
+    <h3>Headings</h3>
+    <ul>
+      <li>Use ATX-style headings (<code># Heading</code>) not Setext-style (<code>Heading\n===</code>)</li>
+      <li>Always include a space after the <code>#</code> characters</li>
+      <li>Leave one blank line before and after each heading</li>
+      <li>Don't end headings with punctuation</li>
+      <li>Use sentence case ("Getting started") or title case ("Getting Started") — but be consistent</li>
+    </ul>
+
+    <h3>Lists</h3>
+    <ul>
+      <li>Use <code>-</code> for unordered lists (most common in open-source; <code>*</code> is also fine but pick one)</li>
+      <li>Use <code>1.</code> for all items in ordered lists — Markdown auto-numbers them, and this avoids renumbering when you insert items</li>
+      <li>Indent nested lists with 2 or 4 spaces, consistently</li>
+      <li>Add a blank line before and after a list</li>
+    </ul>
+
+    <div class="do-dont">
+      <div class="do">
+        <div class="label">Do</div>
+        <code>Steps to deploy:
+
+1. Run the build
+1. Run tests
+1. Push to staging
+1. Verify health checks
+1. Promote to production</code>
+      </div>
+      <div class="dont">
+        <div class="label">Don't</div>
+        <code>Steps to deploy:
+1. Run the build
+2. Run tests
+3. Push to staging
+4. Verify health checks
+5. Promote to production</code>
+      </div>
+    </div>
+
+    <h3>Emphasis</h3>
+    <ul>
+      <li>Use <code>**bold**</code> for important terms being introduced or critical warnings</li>
+      <li>Use <code>*italic*</code> for emphasis or when referencing titles of works</li>
+      <li>Use <code>`backticks`</code> for code, commands, file names, key names, and technical terms</li>
+      <li>Don't overuse emphasis — if everything is bold, nothing stands out</li>
+    </ul>
+
+    <h2>4. Links</h2>
+
+    <h3>Use descriptive link text</h3>
+    <p>Link text should describe where the link goes, not just say "click here" or "this page." This helps accessibility (screen readers) and scannability.</p>
+    <div class="do-dont">
+      <div class="do">
+        <div class="label">Do</div>
+        <code>See the [authentication guide](./auth.md)
+for setup instructions.
+
+Read the [API rate limiting docs](./rate-limits.md)
+before deploying.</code>
+      </div>
+      <div class="dont">
+        <div class="label">Don't</div>
+        <code>Click [here](./auth.md) for the auth guide.
+
+For rate limiting info, see [this page](./rate-limits.md).</code>
+      </div>
+    </div>
+
+    <h3>Use reference links for repeated URLs</h3>
+    <p>When a URL appears multiple times or when inline links make text hard to read, use reference-style links:</p>
+    <div class="syntax-block"><code>This feature requires [Node.js 18+][node] and [TypeScript 5+][ts].
+See the [installation guide][install] for setup details.
+
+[node]: https://nodejs.org/
+[ts]: https://www.typescriptlang.org/
+[install]: ./docs/install.md</code></div>
+
+    <h3>Relative vs. absolute links</h3>
+    <p>Within a repository or documentation site, use relative links (<code>./other-doc.md</code>) so links work regardless of where the docs are hosted. Use absolute URLs only for external resources.</p>
+
+    <h2>5. Code Blocks</h2>
+
+    <h3>Always specify the language</h3>
+    <p>Even when you think the language is obvious, specifying it enables syntax highlighting and helps readers identify what they're looking at:</p>
+    <div class="do-dont">
+      <div class="do">
+        <div class="label">Do</div>
+        <code>```bash
+npm install express
+```</code>
+      </div>
+      <div class="dont">
+        <div class="label">Don't</div>
+        <code>```
+npm install express
+```</code>
+      </div>
+    </div>
+
+    <h3>Keep examples runnable</h3>
+    <p>Code examples should work when copy-pasted. Include necessary imports, variable declarations, and context. If an example is a fragment, indicate that clearly:</p>
+    <div class="syntax-block"><code>```javascript
+// In your express route handler:
+app.get('/api/users', async (req, res) =&gt; {
+  const users = await db.users.findAll();
+  res.json(users);
+});
+```</code></div>
+
+    <h3>Use appropriate block types</h3>
+    <ul>
+      <li>Use <code>`inline code`</code> for short references: file names, function names, CLI commands</li>
+      <li>Use fenced blocks for multi-line code, command output, or configuration files</li>
+      <li>Use <code>```console</code> or <code>```bash</code> for terminal commands</li>
+      <li>Use <code>```text</code> for plain output that shouldn't be highlighted</li>
+    </ul>
+
+    <h2>6. Images and Media</h2>
+    <ul>
+      <li>Always include meaningful alt text — describe what the image shows</li>
+      <li>Store images in a dedicated directory (e.g., <code>docs/images/</code> or <code>.github/assets/</code>)</li>
+      <li>Use descriptive file names: <code>auth-flow-diagram.png</code> not <code>screenshot1.png</code></li>
+      <li>Optimize image file size — compress PNGs and use SVGs for diagrams where possible</li>
+      <li>Consider using Mermaid diagrams instead of images for flowcharts and architectures — they're searchable, editable, and render at any resolution</li>
+    </ul>
+
+    <h2>7. Tables</h2>
+    <ul>
+      <li>Only use tables for genuinely tabular data — not for layout</li>
+      <li>Keep tables simple — if a cell needs multiple paragraphs, use a list or subsection instead</li>
+      <li>Align columns in your source for readability (not required by Markdown, but helps maintainers)</li>
+      <li>Include a header row — tables without headers render unpredictably</li>
+    </ul>
+
+    <h2>8. File Organization</h2>
+    <p>For larger documentation projects, adopt a clear file structure:</p>
+    <div class="syntax-block"><code>docs/
+├── README.md           # Entry point, table of contents
+├── getting-started.md  # Quick start guide
+├── installation.md     # Detailed setup
+├── configuration.md    # Config reference
+├── guides/
+│   ├── authentication.md
+│   ├── deployment.md
+│   └── troubleshooting.md
+├── api/
+│   ├── overview.md
+│   └── endpoints.md
+└── images/
+    └── architecture.png</code></div>
+    <p>Name files with lowercase kebab-case. Use <code>README.md</code> (uppercase) as the entry point in each directory since GitHub and most platforms auto-display it.</p>
+
+    <h2>9. Whitespace and Spacing</h2>
+    <ul>
+      <li>Use one blank line between block elements (headings, paragraphs, lists, code blocks)</li>
+      <li>Don't use more than one consecutive blank line</li>
+      <li>End files with a single newline character</li>
+      <li>Don't add trailing whitespace (configure your editor to trim it)</li>
+      <li>Be consistent with indentation — 2 spaces for nested lists is most common</li>
+    </ul>
+
+    <h2>10. Accessibility Considerations</h2>
+    <ul>
+      <li><strong>Alt text on images</strong> — Screen readers depend on this. Describe the content, not just "screenshot"</li>
+      <li><strong>Descriptive links</strong> — "Click here" means nothing out of context. Use "See the deployment guide" instead</li>
+      <li><strong>Sequential headings</strong> — Assistive technology uses heading levels for navigation</li>
+      <li><strong>Language in code blocks</strong> — Helps screen readers announce code blocks appropriately</li>
+      <li><strong>Don't rely on color alone</strong> — If you use colored text or emoji to indicate status, include text labels too</li>
+    </ul>
+
+    <div class="cta-box">
+      <p><strong>Preview your Markdown</strong> — Check formatting, heading structure, and rendering before publishing with MD Viewer's live preview.</p>
+      <a href="/">Open MD Viewer</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/guides/markdown-syntax/">Syntax</a>
+    <a href="/guides/latex-math/">LaTeX</a>
+    <a href="/guides/mermaid-diagrams/">Mermaid</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </footer>
+</body>
+
+</html>

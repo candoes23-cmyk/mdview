@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta -->
+  <title>Mermaid Diagram Guide — Flowcharts, Sequence Diagrams &amp; More | MD Viewer</title>
+  <meta name="description"
+    content="Learn how to create Mermaid diagrams in Markdown. Step-by-step guide to flowcharts, sequence diagrams, class diagrams, Gantt charts, ER diagrams, and pie charts with examples." />
+  <meta name="keywords"
+    content="mermaid diagrams, mermaid js, markdown diagrams, flowchart markdown, sequence diagram, gantt chart markdown, class diagram, mermaid syntax, diagram as code" />
+  <meta name="author" content="MD Viewer" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="canonical" href="https://mdview.co/guides/mermaid-diagrams/" />
+  <link rel="alternate" hreflang="en" href="https://mdview.co/guides/mermaid-diagrams/" />
+  <link rel="alternate" hreflang="x-default" href="https://mdview.co/guides/mermaid-diagrams/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Mermaid Diagram Guide — Flowcharts, Sequence Diagrams & More" />
+  <meta property="og:description"
+    content="Learn how to create Mermaid diagrams in Markdown. Flowcharts, sequence diagrams, class diagrams, and more." />
+  <meta property="og:url" content="https://mdview.co/guides/mermaid-diagrams/" />
+  <meta property="og:site_name" content="MD Viewer" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://mdview.co/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mermaid Diagram Guide — Flowcharts, Sequence Diagrams & More" />
+  <meta name="twitter:description"
+    content="Step-by-step guide to creating diagrams in Markdown with Mermaid syntax." />
+  <meta name="twitter:image" content="https://mdview.co/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Mermaid Diagram Guide — Flowcharts, Sequence Diagrams & More",
+    "description": "Learn how to create Mermaid diagrams in Markdown. Step-by-step guide to flowcharts, sequence diagrams, class diagrams, Gantt charts, and more.",
+    "author": { "@type": "Organization", "name": "MD Viewer" },
+    "publisher": { "@type": "Organization", "name": "MD Viewer", "url": "https://mdview.co" },
+    "mainEntityOfPage": "https://mdview.co/guides/mermaid-diagrams/",
+    "datePublished": "2025-02-01",
+    "dateModified": "2025-05-10"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "MD Viewer", "item": "https://mdview.co/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://mdview.co/guides/markdown-syntax/" },
+      { "@type": "ListItem", "position": 3, "name": "Mermaid Diagrams", "item": "https://mdview.co/guides/mermaid-diagrams/" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-surface: #161b22;
+      --text: #e6edf3;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff;
+      --border: rgba(136, 198, 255, 0.08);
+      --code-bg: #1c2128;
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --bg-surface: #f6f8fa;
+      --text: #1f2328;
+      --text-secondary: #656d76;
+      --accent: #0969da;
+      --border: rgba(31, 35, 40, 0.08);
+      --code-bg: #f0f3f6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-surface);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .page-header a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 15px; }
+    .page-header a:hover { text-decoration: underline; }
+    .page-header .sep { width: 1px; height: 20px; background: var(--border); }
+    .page-header .title { font-size: 14px; color: var(--text-secondary); }
+
+    main { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+
+    .intro { font-size: 16px; color: var(--text-secondary); margin-bottom: 36px; line-height: 1.7; }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 { font-size: 1.05rem; font-weight: 600; margin-top: 28px; margin-bottom: 10px; }
+
+    p, li { font-size: 15px; margin-bottom: 12px; color: var(--text-secondary); }
+    ul, ol { padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--accent); }
+    strong { color: var(--text); }
+
+    .syntax-block {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 12px 0 20px;
+      overflow-x: auto;
+    }
+
+    .syntax-block code {
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text);
+      white-space: pre;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+
+    th, td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; }
+    th { background: var(--bg-surface); font-weight: 600; color: var(--text); }
+    td { color: var(--text-secondary); }
+
+    td code, p code, li code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .cta-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .cta-box p { margin-bottom: 12px; }
+
+    .cta-box a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .cta-box a:hover { opacity: 0.9; }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .site-footer a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+    .site-footer a:hover { color: var(--accent); }
+  </style>
+</head>
+
+<body>
+  <header class="page-header">
+    <a href="/">MD Viewer</a>
+    <div class="sep"></div>
+    <span class="title">Mermaid Diagrams Guide</span>
+  </header>
+
+  <main>
+    <h1>Mermaid Diagram Guide</h1>
+    <p class="intro">Mermaid is a JavaScript-based diagramming tool that lets you create diagrams and visualizations using text-based syntax inside Markdown code blocks. Instead of dragging shapes around in a design tool, you describe your diagram with simple text, and it renders automatically. Mermaid supports flowcharts, sequence diagrams, class diagrams, Gantt charts, ER diagrams, state diagrams, pie charts, and more.</p>
+
+    <h2>How to Use Mermaid in Markdown</h2>
+    <p>Wrap your Mermaid code in a fenced code block with the <code>mermaid</code> language identifier:</p>
+    <div class="syntax-block"><code>```mermaid
+graph TD
+    A[Start] --> B[Process]
+    B --> C[End]
+```</code></div>
+    <p>This works in MD Viewer, GitHub, GitLab, Notion, and many other Markdown renderers. MD Viewer renders Mermaid diagrams in real-time as you type.</p>
+
+    <h2>Flowcharts</h2>
+    <p>Flowcharts are the most common Mermaid diagram. They show processes, decisions, and connections between steps.</p>
+
+    <h3>Direction</h3>
+    <p>Set the direction with <code>graph</code> or <code>flowchart</code> followed by a direction keyword:</p>
+    <table>
+      <thead><tr><th>Direction</th><th>Keyword</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Top to Bottom</td><td><code>TD</code> or <code>TB</code></td><td>Default vertical flow</td></tr>
+        <tr><td>Bottom to Top</td><td><code>BT</code></td><td>Reverse vertical flow</td></tr>
+        <tr><td>Left to Right</td><td><code>LR</code></td><td>Horizontal flow</td></tr>
+        <tr><td>Right to Left</td><td><code>RL</code></td><td>Reverse horizontal flow</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Node Shapes</h3>
+    <div class="syntax-block"><code>```mermaid
+flowchart LR
+    A[Rectangle]
+    B(Rounded)
+    C([Stadium])
+    D[[Subroutine]]
+    E[(Database)]
+    F((Circle))
+    G{Diamond}
+    H{{Hexagon}}
+    I[/Parallelogram/]
+    J[\Parallelogram alt\]
+    K[/Trapezoid\]
+```</code></div>
+
+    <h3>Link Types</h3>
+    <div class="syntax-block"><code>```mermaid
+flowchart LR
+    A --> B           %% Arrow
+    C --- D           %% Line (no arrow)
+    E -.- F           %% Dotted line
+    G -.-> H          %% Dotted arrow
+    I ==> J           %% Thick arrow
+    K -- "label" --> L %% Arrow with label
+    M -->|label| N    %% Alternative label syntax
+```</code></div>
+
+    <h3>Complete Flowchart Example</h3>
+    <div class="syntax-block"><code>```mermaid
+flowchart TD
+    Start([Start]) --> Input[/Get user input/]
+    Input --> Validate{Is input valid?}
+    Validate -->|Yes| Process[Process data]
+    Validate -->|No| Error[Show error message]
+    Error --> Input
+    Process --> Save[(Save to database)]
+    Save --> End([End])
+```</code></div>
+
+    <h3>Subgraphs</h3>
+    <p>Group related nodes together:</p>
+    <div class="syntax-block"><code>```mermaid
+flowchart TB
+    subgraph Frontend
+        A[React App] --> B[API Client]
+    end
+    subgraph Backend
+        C[Express Server] --> D[(PostgreSQL)]
+    end
+    B --> C
+```</code></div>
+
+    <h2>Sequence Diagrams</h2>
+    <p>Show interactions between actors or systems over time. Ideal for documenting API flows, authentication sequences, or microservice communication.</p>
+    <div class="syntax-block"><code>```mermaid
+sequenceDiagram
+    participant U as User
+    participant C as Client
+    participant S as Server
+    participant DB as Database
+
+    U->>C: Click login button
+    C->>S: POST /auth/login
+    S->>DB: Query user credentials
+    DB-->>S: User record
+    alt Valid credentials
+        S-->>C: 200 OK + JWT token
+        C-->>U: Show dashboard
+    else Invalid credentials
+        S-->>C: 401 Unauthorized
+        C-->>U: Show error message
+    end
+```</code></div>
+
+    <h3>Message Arrow Types</h3>
+    <table>
+      <thead><tr><th>Arrow</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><code>->></code></td><td>Solid line with arrowhead</td></tr>
+        <tr><td><code>-->></code></td><td>Dashed line with arrowhead</td></tr>
+        <tr><td><code>-></code></td><td>Solid line without arrowhead</td></tr>
+        <tr><td><code>--></code></td><td>Dashed line without arrowhead</td></tr>
+        <tr><td><code>-x</code></td><td>Solid line with cross (async)</td></tr>
+        <tr><td><code>--x</code></td><td>Dashed line with cross (async)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Sequence Features</h3>
+    <div class="syntax-block"><code>```mermaid
+sequenceDiagram
+    participant A
+    participant B
+
+    Note over A,B: Authentication Flow
+    A->>B: Request
+    activate B
+    B-->>A: Response
+    deactivate B
+
+    loop Every 30 seconds
+        A->>B: Heartbeat ping
+    end
+
+    opt Optional step
+        A->>B: Extra request
+    end
+```</code></div>
+
+    <h2>Class Diagrams</h2>
+    <p>Describe object-oriented structures with classes, attributes, methods, and relationships:</p>
+    <div class="syntax-block"><code>```mermaid
+classDiagram
+    class Animal {
+        +String name
+        +int age
+        +makeSound() void
+        +move() void
+    }
+
+    class Dog {
+        +String breed
+        +fetch() void
+        +bark() void
+    }
+
+    class Cat {
+        +bool isIndoor
+        +purr() void
+        +scratch() void
+    }
+
+    Animal &lt;|-- Dog : inherits
+    Animal &lt;|-- Cat : inherits
+    Dog "1" --&gt; "*" Toy : plays with
+```</code></div>
+
+    <h3>Relationship Types</h3>
+    <table>
+      <thead><tr><th>Syntax</th><th>Relationship</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;|--</code></td><td>Inheritance</td></tr>
+        <tr><td><code>*--</code></td><td>Composition</td></tr>
+        <tr><td><code>o--</code></td><td>Aggregation</td></tr>
+        <tr><td><code>--></code></td><td>Association</td></tr>
+        <tr><td><code>..></code></td><td>Dependency</td></tr>
+        <tr><td><code>..|></code></td><td>Realization (implements)</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Gantt Charts</h2>
+    <p>Visualize project timelines, task dependencies, and milestones:</p>
+    <div class="syntax-block"><code>```mermaid
+gantt
+    title Project Development Timeline
+    dateFormat  YYYY-MM-DD
+    excludes    weekends
+
+    section Planning
+    Requirements gathering  :done, req, 2025-01-06, 5d
+    Technical design        :done, des, after req, 3d
+    Architecture review     :milestone, m1, after des, 0d
+
+    section Development
+    Backend API             :active, api, after des, 10d
+    Frontend UI             :ui, after des, 12d
+    Integration             :int, after api, 5d
+
+    section Testing
+    Unit tests              :test1, after api, 5d
+    E2E tests               :test2, after int, 4d
+    UAT                     :uat, after test2, 3d
+
+    section Deployment
+    Production release      :milestone, m2, after uat, 0d
+```</code></div>
+
+    <h2>Entity Relationship Diagrams</h2>
+    <p>Model database schemas and their relationships:</p>
+    <div class="syntax-block"><code>```mermaid
+erDiagram
+    USER ||--o{ ORDER : places
+    USER {
+        int id PK
+        string name
+        string email UK
+        date created_at
+    }
+    ORDER ||--|{ LINE_ITEM : contains
+    ORDER {
+        int id PK
+        int user_id FK
+        date order_date
+        string status
+    }
+    PRODUCT ||--o{ LINE_ITEM : "is in"
+    PRODUCT {
+        int id PK
+        string name
+        decimal price
+        int stock
+    }
+    LINE_ITEM {
+        int id PK
+        int order_id FK
+        int product_id FK
+        int quantity
+    }
+```</code></div>
+
+    <h3>Cardinality Notation</h3>
+    <table>
+      <thead><tr><th>Syntax</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><code>||--||</code></td><td>One to one</td></tr>
+        <tr><td><code>||--o{</code></td><td>One to zero or more</td></tr>
+        <tr><td><code>||--|{</code></td><td>One to one or more</td></tr>
+        <tr><td><code>}o--o{</code></td><td>Zero or more to zero or more</td></tr>
+      </tbody>
+    </table>
+
+    <h2>State Diagrams</h2>
+    <p>Model state machines and lifecycle transitions:</p>
+    <div class="syntax-block"><code>```mermaid
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Review : Submit
+    Review --> Approved : Approve
+    Review --> Draft : Request changes
+    Approved --> Published : Publish
+    Published --> Archived : Archive
+    Archived --> [*]
+
+    state Review {
+        [*] --> PeerReview
+        PeerReview --> TechLead
+        TechLead --> [*]
+    }
+```</code></div>
+
+    <h2>Pie Charts</h2>
+    <p>Simple data visualization for proportional data:</p>
+    <div class="syntax-block"><code>```mermaid
+pie title Browser Market Share (2025)
+    "Chrome" : 65
+    "Safari" : 19
+    "Firefox" : 4
+    "Edge" : 5
+    "Other" : 7
+```</code></div>
+
+    <h2>Tips for Better Diagrams</h2>
+    <ul>
+      <li><strong>Keep it simple</strong> — If your diagram has more than 15-20 nodes, consider splitting it into multiple diagrams.</li>
+      <li><strong>Use meaningful IDs</strong> — Name nodes descriptively (<code>AuthService</code> not <code>A</code>) for readable source.</li>
+      <li><strong>Direction matters</strong> — Use LR for process flows, TD for hierarchies.</li>
+      <li><strong>Add comments</strong> — Use <code>%%</code> for comments that won't render: <code>%% This is a comment</code></li>
+      <li><strong>Use subgraphs</strong> — Group related nodes to add visual structure.</li>
+      <li><strong>Label relationships</strong> — Always label edges in ER and class diagrams for clarity.</li>
+    </ul>
+
+    <div class="cta-box">
+      <p><strong>Build diagrams visually</strong> — Use our dedicated Mermaid editor with live preview and syntax hints.</p>
+      <a href="/mermaid-editor/">Open Mermaid Editor</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/guides/markdown-syntax/">Syntax</a>
+    <a href="/guides/latex-math/">LaTeX</a>
+    <a href="/guides/mermaid-diagrams/">Mermaid</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </footer>
+</body>
+
+</html>

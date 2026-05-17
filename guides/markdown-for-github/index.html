@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta -->
+  <title>GitHub Flavored Markdown Guide — GFM Syntax &amp; Features | MD Viewer</title>
+  <meta name="description"
+    content="Complete guide to GitHub Flavored Markdown (GFM). Learn GitHub-specific features like task lists, alerts, collapsible sections, autolinks, tables, and footnotes with examples." />
+  <meta name="keywords"
+    content="github markdown, github flavored markdown, GFM, github readme, github syntax, markdown github, github alerts, github task lists, github tables" />
+  <meta name="author" content="MD Viewer" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="canonical" href="https://mdview.co/guides/markdown-for-github/" />
+  <link rel="alternate" hreflang="en" href="https://mdview.co/guides/markdown-for-github/" />
+  <link rel="alternate" hreflang="x-default" href="https://mdview.co/guides/markdown-for-github/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="GitHub Flavored Markdown Guide — GFM Syntax & Features" />
+  <meta property="og:description"
+    content="Complete guide to GitHub-specific Markdown features. Task lists, alerts, collapsible sections, and more." />
+  <meta property="og:url" content="https://mdview.co/guides/markdown-for-github/" />
+  <meta property="og:site_name" content="MD Viewer" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://mdview.co/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GitHub Flavored Markdown Guide — GFM Syntax & Features" />
+  <meta name="twitter:description"
+    content="Complete guide to GitHub Flavored Markdown with examples for READMEs, issues, and PRs." />
+  <meta name="twitter:image" content="https://mdview.co/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GitHub Flavored Markdown Guide — GFM Syntax & Features",
+    "description": "Complete guide to GitHub Flavored Markdown (GFM). Learn GitHub-specific features like task lists, alerts, collapsible sections, autolinks, and more.",
+    "author": { "@type": "Organization", "name": "MD Viewer" },
+    "publisher": { "@type": "Organization", "name": "MD Viewer", "url": "https://mdview.co" },
+    "mainEntityOfPage": "https://mdview.co/guides/markdown-for-github/",
+    "datePublished": "2025-02-10",
+    "dateModified": "2025-05-10"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "MD Viewer", "item": "https://mdview.co/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://mdview.co/guides/markdown-syntax/" },
+      { "@type": "ListItem", "position": 3, "name": "GitHub Markdown", "item": "https://mdview.co/guides/markdown-for-github/" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-surface: #161b22;
+      --text: #e6edf3;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff;
+      --border: rgba(136, 198, 255, 0.08);
+      --code-bg: #1c2128;
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --bg-surface: #f6f8fa;
+      --text: #1f2328;
+      --text-secondary: #656d76;
+      --accent: #0969da;
+      --border: rgba(31, 35, 40, 0.08);
+      --code-bg: #f0f3f6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-surface);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .page-header a { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 15px; }
+    .page-header a:hover { text-decoration: underline; }
+    .page-header .sep { width: 1px; height: 20px; background: var(--border); }
+    .page-header .title { font-size: 14px; color: var(--text-secondary); }
+
+    main { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+    .intro { font-size: 16px; color: var(--text-secondary); margin-bottom: 36px; line-height: 1.7; }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 { font-size: 1.05rem; font-weight: 600; margin-top: 28px; margin-bottom: 10px; }
+
+    p, li { font-size: 15px; margin-bottom: 12px; color: var(--text-secondary); }
+    ul, ol { padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--accent); }
+    strong { color: var(--text); }
+
+    .syntax-block {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 12px 0 20px;
+      overflow-x: auto;
+    }
+
+    .syntax-block code {
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text);
+      white-space: pre;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+
+    th, td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; }
+    th { background: var(--bg-surface); font-weight: 600; color: var(--text); }
+    td { color: var(--text-secondary); }
+
+    td code, p code, li code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .cta-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .cta-box p { margin-bottom: 12px; }
+    .cta-box a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .cta-box a:hover { opacity: 0.9; }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .site-footer a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+    .site-footer a:hover { color: var(--accent); }
+  </style>
+</head>
+
+<body>
+  <header class="page-header">
+    <a href="/">MD Viewer</a>
+    <div class="sep"></div>
+    <span class="title">GitHub Markdown Guide</span>
+  </header>
+
+  <main>
+    <h1>GitHub Flavored Markdown Guide</h1>
+    <p class="intro">GitHub Flavored Markdown (GFM) extends standard Markdown with features tailored for software development: task lists, tables, syntax-highlighted code blocks, alerts, autolinked references, and more. Whether you're writing a README, filing an issue, or commenting on a pull request, this guide covers every GitHub-specific Markdown feature you need to know.</p>
+
+    <h2>What is GFM?</h2>
+    <p>GitHub Flavored Markdown is GitHub's dialect of Markdown, built on top of the CommonMark specification. It adds features specifically useful in a software development context. GFM is used in:</p>
+    <ul>
+      <li>README.md files displayed on repository pages</li>
+      <li>Issues and pull request descriptions</li>
+      <li>Comments and discussions</li>
+      <li>Wiki pages</li>
+      <li>GitHub Pages (Jekyll)</li>
+      <li>Release notes</li>
+    </ul>
+
+    <h2>Task Lists</h2>
+    <p>Create interactive checklists in issues and pull requests. On GitHub, these render as clickable checkboxes:</p>
+    <div class="syntax-block"><code>- [x] Design database schema
+- [x] Implement API endpoints
+- [ ] Write unit tests
+- [ ] Update documentation
+- [ ] Deploy to staging</code></div>
+    <p>Task lists in issue bodies contribute to GitHub's progress indicator, showing "3 of 5 tasks complete" in issue listings. This makes them perfect for tracking sub-tasks within an issue.</p>
+
+    <h2>Tables</h2>
+    <p>GFM supports tables with alignment control using pipes and hyphens:</p>
+    <div class="syntax-block"><code>| Feature       | Status    | Priority |
+| :------------ | :-------: | -------: |
+| Authentication| Complete  | High     |
+| Dashboard     | In Progress| Medium  |
+| Reports       | Planned   | Low      |</code></div>
+    <p>Alignment is set in the separator row: <code>:---</code> for left, <code>:---:</code> for center, <code>---:</code> for right. You can use our <a href="/markdown-table-generator/">Table Generator</a> to build tables visually.</p>
+
+    <h2>Alerts (Admonitions)</h2>
+    <p>GitHub supports five types of alerts for highlighting important information in documentation:</p>
+    <div class="syntax-block"><code>&gt; [!NOTE]
+&gt; Useful information that users should know, even when skimming content.
+
+&gt; [!TIP]
+&gt; Helpful advice for doing things better or more easily.
+
+&gt; [!IMPORTANT]
+&gt; Key information users need to know to achieve their goal.
+
+&gt; [!WARNING]
+&gt; Urgent info that needs immediate user attention to avoid problems.
+
+&gt; [!CAUTION]
+&gt; Advises about risks or negative outcomes of certain actions.</code></div>
+    <p>These render as colored callout boxes on GitHub with appropriate icons. They are ideal for documentation, READMEs, and contributing guides.</p>
+
+    <h2>Collapsible Sections</h2>
+    <p>Use HTML <code>&lt;details&gt;</code> tags to create expandable/collapsible content — perfect for long logs, configuration examples, or optional information:</p>
+    <div class="syntax-block"><code>&lt;details&gt;
+&lt;summary&gt;Click to see the full error log&lt;/summary&gt;
+
+```
+Error: Connection refused at 127.0.0.1:5432
+    at TCPConnectWrap.afterConnect [as oncomplete]
+    at Protocol._enqueue
+Stack trace continues...
+```
+
+&lt;/details&gt;</code></div>
+    <p>You can nest Markdown inside <code>&lt;details&gt;</code> blocks — just leave a blank line after the <code>&lt;summary&gt;</code> tag.</p>
+
+    <h2>Syntax-Highlighted Code Blocks</h2>
+    <p>Specify the language after the opening triple backticks for automatic syntax highlighting:</p>
+    <div class="syntax-block"><code>```typescript
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: 'admin' | 'user';
+}
+
+async function getUser(id: string): Promise&lt;User&gt; {
+  const response = await fetch(`/api/users/${id}`);
+  return response.json();
+}
+```</code></div>
+    <p>GitHub supports syntax highlighting for hundreds of languages. Common identifiers include: <code>javascript</code>, <code>typescript</code>, <code>python</code>, <code>ruby</code>, <code>go</code>, <code>rust</code>, <code>java</code>, <code>bash</code>, <code>yaml</code>, <code>json</code>, <code>sql</code>, <code>diff</code>, <code>dockerfile</code>.</p>
+
+    <h3>Diff Syntax Highlighting</h3>
+    <p>Use the <code>diff</code> language to highlight additions and removals:</p>
+    <div class="syntax-block"><code>```diff
+- const oldFunction = () => { return null; }
++ const newFunction = (param: string) => { return param; }
+```</code></div>
+
+    <h2>Autolinked References</h2>
+    <p>GitHub automatically turns certain text patterns into clickable links:</p>
+    <table>
+      <thead><tr><th>Pattern</th><th>Links to</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><code>#123</code></td><td>Issue or PR in same repo</td><td>#42</td></tr>
+        <tr><td><code>org/repo#123</code></td><td>Issue or PR in another repo</td><td>facebook/react#1234</td></tr>
+        <tr><td><code>@username</code></td><td>User profile (notifies them)</td><td>@octocat</td></tr>
+        <tr><td><code>SHA</code></td><td>Commit (first 7+ chars)</td><td>a1b2c3d</td></tr>
+        <tr><td><code>org/repo@SHA</code></td><td>Commit in another repo</td><td>org/repo@a1b2c3d</td></tr>
+        <tr><td>URL</td><td>Clickable hyperlink</td><td>https://github.com</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Footnotes</h2>
+    <p>Add footnotes to provide supplementary information without disrupting the reading flow:</p>
+    <div class="syntax-block"><code>This claim needs a citation.[^1]
+
+Another statement with additional context.[^note]
+
+[^1]: Source: Research paper, 2024.
+[^note]: Extended explanation that provides
+    additional context spanning multiple lines.</code></div>
+
+    <h2>Mermaid Diagrams</h2>
+    <p>GitHub natively renders Mermaid diagrams in Markdown files, issues, and comments:</p>
+    <div class="syntax-block"><code>```mermaid
+graph LR
+    A[Feature Branch] -->|Pull Request| B[Code Review]
+    B -->|Approved| C[Merge to Main]
+    C --> D[CI/CD Pipeline]
+    D --> E[Deploy]
+```</code></div>
+    <p>For a comprehensive guide to Mermaid syntax, see our <a href="/guides/mermaid-diagrams/">Mermaid Diagrams Guide</a>.</p>
+
+    <h2>Math Expressions</h2>
+    <p>GitHub supports LaTeX math rendering using dollar-sign delimiters:</p>
+    <div class="syntax-block"><code>Inline: The time complexity is $O(n \log n)$.
+
+Block display:
+$$
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+$$</code></div>
+    <p>See our <a href="/guides/latex-math/">LaTeX Math Guide</a> for a complete reference of supported commands.</p>
+
+    <h2>README Best Practices</h2>
+    <p>A great GitHub README typically includes these sections:</p>
+    <div class="syntax-block"><code># Project Name
+
+Short description of what the project does.
+
+## Features
+
+- Feature 1
+- Feature 2
+- Feature 3
+
+## Installation
+
+```bash
+npm install your-package
+```
+
+## Quick Start
+
+```javascript
+import { thing } from 'your-package';
+// Usage example
+```
+
+## Documentation
+
+Link to full docs or describe configuration options.
+
+## Contributing
+
+How to contribute, link to CONTRIBUTING.md.
+
+## License
+
+MIT — see [LICENSE](LICENSE) for details.</code></div>
+
+    <h3>Badges</h3>
+    <p>Add status badges to the top of your README for quick project health overview:</p>
+    <div class="syntax-block"><code>![Build Status](https://img.shields.io/github/actions/workflow/status/user/repo/ci.yml)
+![npm version](https://img.shields.io/npm/v/package-name)
+![License](https://img.shields.io/github/license/user/repo)</code></div>
+
+    <h2>Emoji</h2>
+    <p>GitHub supports emoji shortcodes in all Markdown contexts:</p>
+    <div class="syntax-block"><code>:bug: Bug fix
+:sparkles: New feature
+:memo: Documentation
+:rocket: Deployment
+:white_check_mark: Tests passing
+:warning: Breaking change</code></div>
+    <p>These are commonly used in commit messages and PR titles following conventional commit patterns.</p>
+
+    <h2>Keyboard Shortcuts Display</h2>
+    <p>Use the HTML <code>&lt;kbd&gt;</code> tag to display keyboard shortcuts in documentation:</p>
+    <div class="syntax-block"><code>Press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;P&lt;/kbd&gt; to open the command palette.</code></div>
+
+    <h2>GFM vs. Standard Markdown</h2>
+    <table>
+      <thead><tr><th>Feature</th><th>Standard Markdown</th><th>GFM (GitHub)</th></tr></thead>
+      <tbody>
+        <tr><td>Tables</td><td>Not supported</td><td>Supported</td></tr>
+        <tr><td>Task lists</td><td>Not supported</td><td>Interactive checkboxes</td></tr>
+        <tr><td>Strikethrough</td><td>Not supported</td><td><code>~~text~~</code></td></tr>
+        <tr><td>Autolinks</td><td>URLs only</td><td>URLs, issues, users, commits</td></tr>
+        <tr><td>Code fencing</td><td>Indentation only</td><td>Triple backticks + language</td></tr>
+        <tr><td>Alerts</td><td>Not supported</td><td>5 types (NOTE, TIP, etc.)</td></tr>
+        <tr><td>Footnotes</td><td>Not supported</td><td>Supported</td></tr>
+        <tr><td>Mermaid diagrams</td><td>Not supported</td><td>Native rendering</td></tr>
+        <tr><td>Math (LaTeX)</td><td>Not supported</td><td>Dollar-sign delimiters</td></tr>
+      </tbody>
+    </table>
+
+    <div class="cta-box">
+      <p><strong>Preview your GitHub Markdown</strong> — MD Viewer supports all GFM features including alerts, Mermaid diagrams, and LaTeX math. See exactly how your README will look before pushing.</p>
+      <a href="/">Open MD Viewer</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/guides/markdown-syntax/">Syntax</a>
+    <a href="/guides/latex-math/">LaTeX</a>
+    <a href="/guides/mermaid-diagrams/">Mermaid</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </footer>
+</body>
+
+</html>

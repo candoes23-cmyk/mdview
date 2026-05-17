@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta -->
+  <title>Markdown Syntax Cheatsheet — Complete Reference Guide | MD Viewer</title>
+  <meta name="description"
+    content="Complete Markdown syntax reference with examples. Learn headings, links, images, tables, code blocks, task lists, and more. Copy examples directly into your editor." />
+  <meta name="keywords"
+    content="markdown syntax, markdown cheatsheet, markdown reference, markdown guide, markdown formatting, markdown tutorial, how to write markdown" />
+  <meta name="author" content="MD Viewer" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="canonical" href="https://mdview.co/guides/markdown-syntax/" />
+  <link rel="alternate" hreflang="en" href="https://mdview.co/guides/markdown-syntax/" />
+  <link rel="alternate" hreflang="x-default" href="https://mdview.co/guides/markdown-syntax/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Markdown Syntax Cheatsheet — Complete Reference Guide" />
+  <meta property="og:description"
+    content="Complete Markdown syntax reference with examples. Learn headings, links, images, tables, code blocks, and more." />
+  <meta property="og:url" content="https://mdview.co/guides/markdown-syntax/" />
+  <meta property="og:site_name" content="MD Viewer" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://mdview.co/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Markdown Syntax Cheatsheet — Complete Reference Guide" />
+  <meta name="twitter:description"
+    content="Complete Markdown syntax reference with examples for headings, links, images, tables, code blocks, and more." />
+  <meta name="twitter:image" content="https://mdview.co/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Markdown Syntax Cheatsheet — Complete Reference Guide",
+    "description": "Complete Markdown syntax reference with examples covering headings, links, images, tables, code blocks, task lists, and more.",
+    "author": { "@type": "Organization", "name": "MD Viewer" },
+    "publisher": { "@type": "Organization", "name": "MD Viewer", "url": "https://mdview.co" },
+    "mainEntityOfPage": "https://mdview.co/guides/markdown-syntax/",
+    "datePublished": "2025-01-15",
+    "dateModified": "2025-05-10"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "MD Viewer", "item": "https://mdview.co/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://mdview.co/guides/markdown-syntax/" },
+      { "@type": "ListItem", "position": 3, "name": "Markdown Syntax", "item": "https://mdview.co/guides/markdown-syntax/" }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-surface: #161b22;
+      --text: #e6edf3;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff;
+      --border: rgba(136, 198, 255, 0.08);
+      --code-bg: #1c2128;
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --bg-surface: #f6f8fa;
+      --text: #1f2328;
+      --text-secondary: #656d76;
+      --accent: #0969da;
+      --border: rgba(31, 35, 40, 0.08);
+      --code-bg: #f0f3f6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-surface);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .page-header a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .page-header a:hover { text-decoration: underline; }
+
+    .page-header .sep {
+      width: 1px;
+      height: 20px;
+      background: var(--border);
+    }
+
+    .page-header .title {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    p, li {
+      font-size: 15px;
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+
+    ul, ol { padding-left: 24px; }
+    li { margin-bottom: 8px; }
+
+    a { color: var(--accent); }
+
+    strong { color: var(--text); }
+
+    .syntax-block {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 12px 0 20px;
+      overflow-x: auto;
+    }
+
+    .syntax-block code {
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text);
+      white-space: pre;
+    }
+
+    .render-example {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 8px 0 20px;
+      font-size: 14px;
+    }
+
+    .render-example h1, .render-example h2, .render-example h3 {
+      border: none;
+      margin-top: 0;
+      padding: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--bg-surface);
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    td { color: var(--text-secondary); }
+
+    td code, p code {
+      background: var(--code-bg);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .cta-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .cta-box p { margin-bottom: 12px; }
+
+    .cta-box a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .cta-box a:hover { opacity: 0.9; }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .site-footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin: 0 12px;
+    }
+
+    .site-footer a:hover { color: var(--accent); }
+  </style>
+</head>
+
+<body>
+  <header class="page-header">
+    <a href="/">MD Viewer</a>
+    <div class="sep"></div>
+    <span class="title">Markdown Syntax Guide</span>
+  </header>
+
+  <main>
+    <h1>Markdown Syntax Cheatsheet</h1>
+    <p class="intro">A complete reference guide to Markdown syntax. Markdown is a lightweight markup language that lets you format plain text using simple symbols. It was created by John Gruber in 2004 and has since become the standard for writing documentation, README files, forum posts, and more. This guide covers the original Markdown specification plus widely-supported extensions.</p>
+
+    <h2>Headings</h2>
+    <p>Create headings by starting a line with one or more <code>#</code> symbols. The number of hashes determines the heading level (1 through 6).</p>
+    <div class="syntax-block"><code># Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6</code></div>
+    <p>You can also create level 1 and 2 headings by underlining text with <code>=</code> or <code>-</code> characters:</p>
+    <div class="syntax-block"><code>Heading 1
+=========
+
+Heading 2
+---------</code></div>
+    <p>Best practice: Always put a space between the <code>#</code> and the heading text, and leave a blank line before and after each heading for readability.</p>
+
+    <h2>Text Formatting</h2>
+    <p>Markdown supports several inline text formatting styles that you can combine freely.</p>
+    <table>
+      <thead>
+        <tr><th>Style</th><th>Syntax</th><th>Result</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Bold</td><td><code>**bold text**</code></td><td><strong>bold text</strong></td></tr>
+        <tr><td>Italic</td><td><code>*italic text*</code></td><td><em>italic text</em></td></tr>
+        <tr><td>Bold + Italic</td><td><code>***bold italic***</code></td><td><strong><em>bold italic</em></strong></td></tr>
+        <tr><td>Strikethrough</td><td><code>~~deleted text~~</code></td><td><del>deleted text</del></td></tr>
+        <tr><td>Inline code</td><td><code>`code`</code></td><td><code>code</code></td></tr>
+        <tr><td>Highlight</td><td><code>==highlighted==</code></td><td><mark>highlighted</mark></td></tr>
+        <tr><td>Subscript</td><td><code>H~2~O</code></td><td>H<sub>2</sub>O</td></tr>
+        <tr><td>Superscript</td><td><code>X^2^</code></td><td>X<sup>2</sup></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Paragraphs and Line Breaks</h2>
+    <p>To create a new paragraph, separate text with a blank line. Single line breaks within a paragraph are typically joined into one continuous line. To force a line break without creating a new paragraph, end a line with two spaces or use a backslash (<code>\</code>).</p>
+    <div class="syntax-block"><code>This is the first paragraph.
+
+This is the second paragraph.
+
+This line has a forced break\
+and continues on the next line.</code></div>
+
+    <h2>Links</h2>
+    <p>Markdown supports several link formats for different use cases.</p>
+
+    <h3>Inline Links</h3>
+    <div class="syntax-block"><code>[Link text](https://example.com)
+[Link with title](https://example.com "Hover title")</code></div>
+
+    <h3>Reference Links</h3>
+    <p>Reference-style links separate the URL from the text, making documents cleaner when the same URL appears multiple times:</p>
+    <div class="syntax-block"><code>[Link text][ref-id]
+
+[ref-id]: https://example.com "Optional title"</code></div>
+
+    <h3>Autolinks</h3>
+    <p>Wrap a URL or email in angle brackets to create a clickable link automatically:</p>
+    <div class="syntax-block"><code>&lt;https://example.com&gt;
+&lt;user@example.com&gt;</code></div>
+
+    <h2>Images</h2>
+    <p>Image syntax is identical to links but prefixed with an exclamation mark. The text inside the brackets becomes the alt text for accessibility.</p>
+    <div class="syntax-block"><code>![Alt text](image-url.png)
+![Alt text](image-url.png "Optional title")
+
+<!-- Reference-style image -->
+![Alt text][img-ref]
+
+[img-ref]: image-url.png "Title"</code></div>
+    <p>To make an image a clickable link, wrap the image syntax inside link syntax:</p>
+    <div class="syntax-block"><code>[![Alt text](image.png)](https://example.com)</code></div>
+
+    <h2>Lists</h2>
+
+    <h3>Unordered Lists</h3>
+    <p>Create bullet lists with <code>-</code>, <code>*</code>, or <code>+</code> followed by a space:</p>
+    <div class="syntax-block"><code>- First item
+- Second item
+  - Nested item
+  - Another nested item
+- Third item</code></div>
+
+    <h3>Ordered Lists</h3>
+    <p>Use numbers followed by a period. The actual numbers don't matter — Markdown will number them sequentially:</p>
+    <div class="syntax-block"><code>1. First item
+2. Second item
+3. Third item
+   1. Nested ordered item
+   2. Another nested item</code></div>
+
+    <h3>Task Lists</h3>
+    <p>Create interactive checkboxes (supported on GitHub, GitLab, and most modern renderers):</p>
+    <div class="syntax-block"><code>- [x] Completed task
+- [x] Another completed task
+- [ ] Incomplete task
+- [ ] Another incomplete task</code></div>
+
+    <h2>Blockquotes</h2>
+    <p>Prefix lines with <code>&gt;</code> to create blockquotes. You can nest them and include other Markdown formatting inside:</p>
+    <div class="syntax-block"><code>&gt; This is a blockquote.
+&gt;
+&gt; It can span multiple paragraphs.
+
+&gt; Nested blockquotes:
+&gt;&gt; Second level
+&gt;&gt;&gt; Third level</code></div>
+
+    <h2>Code</h2>
+
+    <h3>Inline Code</h3>
+    <p>Wrap text in single backticks for inline code. Use double backticks if your code contains a backtick:</p>
+    <div class="syntax-block"><code>Use `console.log()` to debug.
+Use ``code with a ` backtick`` inside.</code></div>
+
+    <h3>Fenced Code Blocks</h3>
+    <p>Use triple backticks or triple tildes for multi-line code blocks. Add a language identifier for syntax highlighting:</p>
+    <div class="syntax-block"><code>```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+```
+
+```python
+def greet(name):
+    return f"Hello, {name}!"
+```</code></div>
+    <p>Common language identifiers: <code>javascript</code>, <code>python</code>, <code>typescript</code>, <code>html</code>, <code>css</code>, <code>bash</code>, <code>json</code>, <code>sql</code>, <code>go</code>, <code>rust</code>, <code>java</code>, <code>c</code>, <code>cpp</code>.</p>
+
+    <h3>Indented Code Blocks</h3>
+    <p>Indent lines by 4 spaces or 1 tab to create a code block (no syntax highlighting):</p>
+    <div class="syntax-block"><code>    function example() {
+      return true;
+    }</code></div>
+
+    <h2>Tables</h2>
+    <p>Create tables using pipes (<code>|</code>) and hyphens (<code>-</code>). Use colons for alignment:</p>
+    <div class="syntax-block"><code>| Left-aligned | Center-aligned | Right-aligned |
+| :----------- | :------------: | ------------: |
+| Cell 1       | Cell 2         | Cell 3        |
+| Cell 4       | Cell 5         | Cell 6        |</code></div>
+    <p>The outer pipes are optional, and columns don't need to be perfectly aligned in your source — but aligning them makes the source easier to read. You can use our <a href="/markdown-table-generator/">Markdown Table Generator</a> to create tables visually.</p>
+
+    <h2>Horizontal Rules</h2>
+    <p>Create a horizontal divider with three or more hyphens, asterisks, or underscores on their own line:</p>
+    <div class="syntax-block"><code>---
+***
+___</code></div>
+
+    <h2>Footnotes</h2>
+    <p>Add footnotes to provide additional context without cluttering the main text:</p>
+    <div class="syntax-block"><code>Here is a sentence with a footnote.[^1]
+
+[^1]: This is the footnote content.
+
+You can also use multi-paragraph footnotes.[^note]
+
+[^note]:
+    First paragraph of the footnote.
+
+    Second paragraph of the footnote.</code></div>
+
+    <h2>Definition Lists</h2>
+    <p>Some Markdown processors support definition lists for glossary-style content:</p>
+    <div class="syntax-block"><code>Term 1
+: Definition for term 1
+
+Term 2
+: First definition for term 2
+: Second definition for term 2</code></div>
+
+    <h2>Escaping Characters</h2>
+    <p>Use a backslash (<code>\</code>) to display literal characters that would otherwise be interpreted as Markdown formatting:</p>
+    <div class="syntax-block"><code>\* Not italic \*
+\# Not a heading
+\[Not a link\](url)
+\`Not code\`</code></div>
+    <p>Characters you can escape: <code>\</code> <code>`</code> <code>*</code> <code>_</code> <code>{}</code> <code>[]</code> <code>()</code> <code>#</code> <code>+</code> <code>-</code> <code>.</code> <code>!</code> <code>|</code></p>
+
+    <h2>HTML in Markdown</h2>
+    <p>Most Markdown processors allow inline HTML for cases where Markdown syntax falls short:</p>
+    <div class="syntax-block"><code>This is a &lt;sup&gt;superscript&lt;/sup&gt; example.
+
+&lt;details&gt;
+&lt;summary&gt;Click to expand&lt;/summary&gt;
+
+Hidden content here. You can use **Markdown** inside HTML blocks.
+
+&lt;/details&gt;</code></div>
+    <p>However, be aware that HTML support varies by platform. GitHub, for example, sanitizes some HTML tags for security.</p>
+
+    <h2>Extended Syntax Comparison</h2>
+    <p>Not all Markdown features are universally supported. Here's what to expect across common platforms:</p>
+    <table>
+      <thead>
+        <tr><th>Feature</th><th>CommonMark</th><th>GitHub (GFM)</th><th>MD Viewer</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tables</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Task lists</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Strikethrough</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Footnotes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>LaTeX math</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Mermaid diagrams</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Syntax highlighting</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Autolinks</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+        <tr><td>Highlight (==)</td><td>No</td><td>No</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+
+    <div class="cta-box">
+      <p><strong>Try it out</strong> — paste any Markdown into MD Viewer and see it rendered instantly with syntax highlighting, math, and diagrams.</p>
+      <a href="/">Open MD Viewer</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/guides/markdown-syntax/">Syntax</a>
+    <a href="/guides/latex-math/">LaTeX</a>
+    <a href="/guides/mermaid-diagrams/">Mermaid</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </footer>
+</body>
+
+</html>
